@@ -11,7 +11,19 @@
   <input type="text" name="name">
   <label for="price">cena</label>
   <input type="text" name="price">
-  
+  <label for="category">kategoria</label>
+  <select name="category" class="js-category-list">
+    <option value="laptops">laptopy</option>
+    <option value="consoles">konsole</option>
+    <option value="hardware">podzespoły komputerowe</option>
+    <option value="peripherals">urządzenia peryferyjne</option>
+    <option value="accessories">akcesoria</option>
+    <option value="collectibles">gadżety</option>
+  </select>
+  <label for="subcategory">podkategoria</label>
+  <select name="subcategory" class="js-subcategory-list">
+  </select>
+
   <button>Dodaj produkt</button>
   </form>
   <script type = "module" src="./src/admin/addProduct.js"></script>
