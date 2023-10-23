@@ -1,0 +1,1 @@
+// strona administracyjna która listuję wszystkie produktu i umożliwa ich edycję bądz też usunięcie danego produktu

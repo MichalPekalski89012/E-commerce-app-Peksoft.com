@@ -1,0 +1,1 @@
+//kod który będzie generował zawartość strony głównej

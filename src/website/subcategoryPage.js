@@ -1,0 +1,1 @@
+// podstrona generująca listę produktów w zależnosći od tego jaką kategorię wybrał użytkownik
