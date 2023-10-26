@@ -87,7 +87,8 @@ addProductForm.addEventListener('submit',(e)=>{
     name: addProductForm.name.value,
     price: addProductForm.price.value,
     category: addProductForm.category.value,
-    subcategory: addProductForm.subcategory.value
+    subcategory: addProductForm.subcategory.value,
+    description: addProductForm.description.value
   }).then(()=>{
     addProductForm.reset();
   });

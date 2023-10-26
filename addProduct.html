@@ -2,6 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/addProduct.css">
   <title>Dodaj produkt</title>
 </head>
 <body>
@@ -21,11 +22,15 @@
     <option value="collectibles">gadżety</option>
   </select>
   <label for="subcategory">podkategoria</label>
-  <select name="subcategory" class="js-subcategory-list">
-  </select>
+  <select name="subcategory" class="js-subcategory-list"></select>
+  <label for="description">opis produktu</label>
+  <textarea name="description" rows="10"></textarea>
 
   <button>Dodaj produkt</button>
   </form>
+
+
+
   <script type = "module" src="./src/admin/addProduct.js"></script>
 </body>
 </html>
