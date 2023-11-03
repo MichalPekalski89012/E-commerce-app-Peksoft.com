@@ -88,43 +88,43 @@ function switchParemetersTable(subcategory){
     </tr>
     <tr>
       <td>Procesor</td>
-      <td><input type="text" name="parameter1"></td>
+      <td><input type="text" name="parameter1" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Układ graficzny</td>
-      <td><input type="text" name="parameter2"></td>
+      <td><input type="text" name="parameter2" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Pamięć RAM</td>
-      <td><input type="text" name="parameter3"></td>
+      <td><input type="text" name="parameter3" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Dysk</td>
-      <td><input type="text" name="parameter4"></td>
+      <td><input type="text" name="parameter4" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Łączność</td>
-      <td><input type="text" name="parameter5"></td>
+      <td><input type="text" name="parameter5" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Napęd optyczny</td>
-      <td><input type="text" name="parameter6"></td>
+      <td><input type="text" name="parameter6" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Złącza</td>
-      <td><input type="text" name="parameter7"></td>
+      <td><input type="text" name="parameter7" class="parameter-input"></td>
     </tr>
     <tr>
       <td>kolor</td>
-      <td><input type="text" name="parameter8"></td>
+      <td><input type="text" name="parameter8" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Dodatkowe informacje</td>
-      <td><input type="text" name="parameter9"></td>
+      <td><input type="text" name="parameter9" class="parameter-input"></td>
     </tr>
     <tr>
       <td>Dołączone akcesoria</td>
-      <td><input type="text" name="parameter10"></td>
+      <td><input type="text" name="parameter10" class="parameter-input"></td>
     </tr>`;
       break;
   }
