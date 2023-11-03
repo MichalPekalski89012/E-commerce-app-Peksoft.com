@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -23,12 +24,61 @@
   </select>
   <label for="subcategory">podkategoria</label>
   <select name="subcategory" class="js-subcategory-list"></select>
+  <table class="js-parameters-table">
+    <template>
+    <tr>
+      <th>Parametr</th>
+      <th>Wartość</th>
+    </tr>
+    <tr>
+      <td>Procesor</td>
+      <td><input type="text" name="parameter1"></td>
+    </tr>
+    <tr>
+      <td>Układ graficzny</td>
+      <td><input type="text" name="parameter2"></td>
+    </tr>
+    <tr>
+      <td>Pamięć RAM</td>
+      <td><input type="text" name="parameter3"></td>
+    </tr>
+    <tr>
+      <td>Dysk</td>
+      <td><input type="text" name="parameter4"></td>
+    </tr>
+    <tr>
+      <td>Łączność</td>
+      <td><input type="text" name="parameter5"></td>
+    </tr>
+    <tr>
+      <td>Napęd optyczny</td>
+      <td><input type="text" name="parameter6"></td>
+    </tr>
+    <tr>
+      <td>Złącza</td>
+      <td><input type="text" name="parameter7"></td>
+    </tr>
+    <tr>
+      <td>kolor</td>
+      <td><input type="text" name="parameter8"></td>
+    </tr>
+    <tr>
+      <td>Dodatkowe informacje</td>
+      <td><input type="text" name="parameter9"></td>
+    </tr>
+    <tr>
+      <td>Dołączone akcesoria</td>
+      <td><input type="text" name="parameter10"></td>
+    </tr>
+  </template>
+  </table>
+
   <label for="description">opis produktu</label>
   <textarea name="description" rows="10"></textarea>
 
   <button>Dodaj produkt</button>
   </form>
-
+  <a href="productList.html">Lista produktów</a>
 
 
   <script type = "module" src="./src/admin/addProduct.js"></script>
