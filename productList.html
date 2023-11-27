@@ -6,13 +6,23 @@
   <title>Document</title>
 </head>
 <body>
-  <div>
+  <select name="category" class="js-category-list">
+    <option value="laptops">laptopy</option>
+    <option value="consoles">konsole</option>
+    <option value="hardware">podzespoły komputerowe</option>
+    <option value="peripherals">urządzenia peryferyjne</option>
+    <option value="accessories">akcesoria</option>
+    <option value="collectibles">gadżety</option>
+  </select>
+  <select name="subcategory" class="js-subcategory-list"></select>
+
+
+  <div class="js-product-container">
     <p>nazwa produktu</p>
-    <p></p>
   </div>
 
 
 
-
+  <script type = "module" src="./src/admin/productsListAdmin.js"></script>
 </body>
 </html>
