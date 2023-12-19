@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logowanie</title>
+</head>
+<body>
+<form class="login">
+  <label for="email">email:</label>
+  <input type="email" name="email">
+  <label for="password">password:</label>
+  <input type="password" name="password">
+  <button>logowanie</button>
+</form>
+<p>--------------------------</p>
+<p class="user-name"></p>
+<p>--------------------------</p>
+<header>dane Użytkownika</header>
+<p>--------------------------</p>
+<div class="user-data">
+  <template>
+    <header>adres dostawy:</header>
+    <p>${doc.data().address.street}</p>
+    <p>${doc.data().address.postCode} ${doc.data().address.city}</p>
+    <header>numer telefonu:</header>
+    <p>${doc.data().phoneNumber}</p>
+  </template>
+</div>
+<p>--------------------------</p>
+<p>nie masz konta?</p>
+<a href="signup-page.html">Zarejestruj się</a>
+
+<script type="module" src="/src/website/login-page.js"></script>
+</body>
+</html>
