@@ -15,18 +15,20 @@
 <p>--------------------------</p>
 <p class="user-name"></p>
 <p>--------------------------</p>
-<header>dane Użytkownika</header>
-<p>--------------------------</p>
-<div class="user-data">
-  <template>
+<div class="user-data"></div>
+<template>
+  <header>dane Użytkownika</header>
+  <p>--------------------------</p>
     <header>adres dostawy:</header>
     <p>${doc.data().address.street}</p>
     <p>${doc.data().address.postCode} ${doc.data().address.city}</p>
     <header>numer telefonu:</header>
     <p>${doc.data().phoneNumber}</p>
-  </template>
-</div>
-<p>--------------------------</p>
+    <button class="logout">wyloguj się</button>
+  <p>--------------------------</p>
+</template>
+<button class="logout">wyloguj się</button>
+
 <p>nie masz konta?</p>
 <a href="signup-page.html">Zarejestruj się</a>
 

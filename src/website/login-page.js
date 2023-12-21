@@ -1,8 +1,9 @@
-import {signInWithEmailAndPassword,auth,userColRef,query,doc, onSnapshot,where} from "../index.js";
+import {signInWithEmailAndPassword, onAuthStateChanged,auth,userColRef,query,doc, onSnapshot,where,signOut} from "../index.js";
 
 const loginForm = document.querySelector(".login");
 const userData = document.querySelector(".user-data");
 const userName = document.querySelector(".user-name");
+const logoutButton = document.querySelector(".logout");
 
 loginForm.addEventListener("submit",(e)=>{
   e.preventDefault();
@@ -10,13 +11,10 @@ loginForm.addEventListener("submit",(e)=>{
   const password = loginForm.password.value;
 
   signInWithEmailAndPassword(auth,email,password).then((cred)=>{
-    const userId = cred.user.uid;
-    console.log(`Użytkownik ${userId} zalogowany`);
-    readUserData(userId);
+    loginForm.style.visibility = "hidden";
   }).catch((err)=>{
     console.log(err);
   });
-  //wyczytanie danych na podstawie id gracza kolekcja users-documentID = user ID
 });
 
 function readUserData(userId){
@@ -24,11 +22,36 @@ function readUserData(userId){
   onSnapshot(q,(snapshot)=>{
     snapshot.docs.forEach(doc => {
       userName.innerText = `Witaj ${doc.data().name} ${doc.data().surname}!`;
-      userData.innerHTML = `<header>adres dostawy:</header>
-      <p>${doc.data().address.street}</p>
-      <p>${doc.data().address.postCode} ${doc.data().address.city}</p>
-      <header>numer telefonu:</header>
-      <p>${doc.data().phoneNumber}</p>`;
+      userData.innerHTML = `<header>dane Użytkownika</header>
+      <p>--------------------------</p>
+        <header>adres dostawy:</header>
+        <p>${doc.data().address.street}</p>
+        <p>${doc.data().address.postCode} ${doc.data().address.city}</p>
+        <header>numer telefonu:</header>
+        <p>${doc.data().phoneNumber}</p>
+      <p>--------------------------</p>`;
     });
   });
+  
+  
 }
+
+
+onAuthStateChanged(auth,(user)=>{
+  if (user){
+    logoutButton.style.visibility = "visible";
+    loginForm.style.visibility = "hidden";
+    const userId = user.uid;
+    readUserData(userId);
+  } else {
+    userName.innerText = "użytkownik wylogowany";
+    loginForm.style.visibility = "visible";
+    logoutButton.style.visibility = "hidden";
+  }
+});
+
+logoutButton.addEventListener("click",()=>{
+  signOut(auth).then(()=>{
+    location.reload();
+  });
+});
