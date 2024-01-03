@@ -43,6 +43,7 @@ onAuthStateChanged(auth,(user)=>{
     loginForm.style.visibility = "hidden";
     const userId = user.uid;
     readUserData(userId);
+    window.location.href = "/clientPages/client-control-panel.html";
   } else {
     userName.innerText = "użytkownik wylogowany";
     loginForm.style.visibility = "visible";
