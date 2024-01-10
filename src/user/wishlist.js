@@ -16,6 +16,7 @@ function readUserWishlist(userId){
 
 function displayWishlistedProducts(wishlistArray){
   console.log(wishlistArray);
+  if (!wishlistArray){return;}
   wishlistArray.forEach(product=>{
     console.log(product);
     let q = query(productsColRef,where('__name__','==',product));
@@ -32,5 +33,6 @@ onAuthStateChanged(auth,(user)=>{
   if(user){
     const userId = user.uid;
     readUserWishlist(userId);
+    console.log(userId);
   }
 });

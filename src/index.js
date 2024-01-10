@@ -1,15 +1,9 @@
-//import { initializeApp } from 'firebase/app';
-// import { collection, getFirestore, onSnapshot,
-//   addDoc,deleteDoc,doc,query,where, orderBy,
-//   serverTimestamp,getDoc,updateDoc } from 'firebase/firestore';
-// import { getAuth,createUserWithEmailAndPassword,
-//   signOut,signInWithEmailAndPassword,onAuthStateChanged } from 'firebase/auth';
 
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js';
 
 import { collection, getFirestore, onSnapshot,
   addDoc,deleteDoc,doc,query,where, orderBy,
-  serverTimestamp,getDoc,updateDoc} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+  serverTimestamp,getDoc,updateDoc,setDoc,arrayRemove} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
 
 import { getAuth,createUserWithEmailAndPassword,
   signOut,signInWithEmailAndPassword,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js';
@@ -30,5 +24,5 @@ const auth = getAuth();
 const productsColRef = collection(db,'products');
 const userColRef = collection(db,'users');
 
-export {app, db, productsColRef,userColRef, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, updateDoc, getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged,auth};
+export {app, db, productsColRef,userColRef, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, updateDoc, getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, auth,setDoc,arrayRemove};
 
