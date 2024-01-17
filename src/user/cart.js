@@ -2,8 +2,9 @@
 import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where,updateDoc,db,arrayRemove} from "../index.js";
 
 let userId = "";
-let cartArray = [];
+export let cartArray = [];
 const cartContainer = document.querySelector(".cart-container");
+const checkoutButton = document.querySelector(".checkout-button");
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -56,4 +57,6 @@ document.addEventListener("click",(e)=>{
   }
 });
 
-
+checkoutButton.addEventListener("click",(e)=>{
+  window.location.href = "/clientPages/checkout.html"
+});

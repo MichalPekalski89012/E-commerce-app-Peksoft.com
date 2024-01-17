@@ -37,7 +37,8 @@ function setUserData(userId,name,surname){
       postCode: " "
     },
     wishlist: [" "],
-    cart: [" "]
+    cart: [" "],
+    orders: [" "]
   }).then(() => {
     console.log("Document successfully written!");
   })

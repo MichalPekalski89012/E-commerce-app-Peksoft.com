@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="order-details-container">
+    <h2>Sposób dostawy</h2>
+    <div class="delivery-options-container">
+      <input type="radio" name="delivery-option" value="delivery">Kurier
+      <input type="radio" name="delivery-option" value="pick-up-point">Odbiór w punkcie
+    </div>
+
+    <h2>Adres dostawy</h2>
+    <div class="delivery-address-container">
+      <form class="deliver-address-form">
+        <label for="street">ulica</label><br>
+        <input type="text" name="street"><br>
+
+        <label for="city">miasto</label><br>
+        <input type="text" name="city"><br>
+
+        <label for="postCode">kod pocztowy</label><br>
+        <input type="text" name="postCode"><br>
+      </form>
+      
+    </div>
+
+    <h2>Płatność</h2>
+    <div class="payment-options-container">
+      <input type="radio" name="payment-option" value="online-payment">Płatność online
+      <input type="radio" name="payment-option" value="credit-card">Karta płatnicza
+      <input type="radio" name="payment-option" value="Cash-on-delivery">Płatność przy odbiorze
+    </div>
+  </div>
+  <div class="summary-container">
+    <div class="product-list">
+      <template>
+        <div class="product-container">
+          <p>${product.name}</p>
+          <p>${product.price}</p>
+        </div>
+      </template>
+    </div>
+
+    <p class="cart-cost-summary">Wartość koszyka 221321zł</p>
+    <button class="place-order-button">Złóż zamówienie</button>
+  </div>
+  <script type="module" src="/src/user/checkout.js"></script>
+</body>
+</html>
