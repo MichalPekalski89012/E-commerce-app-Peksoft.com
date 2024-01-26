@@ -1,37 +1,75 @@
-import { doc, onSnapshot, productsColRef, query, where,readDocumentById } from "../index.js";
+import { doc, onSnapshot, productsColRef, query, where,readDocumentById,onAuthStateChanged,auth,updateDoc,userColRef } from "../index.js";
 
 let url_string = window.location.href;
 let url = new URL(url_string);
 let productId = url.searchParams.get("productId");
-let productData;
+let cartArray;
+let wishlistArray;
+let userId;
+let parametersArray;
+
 const name = document.querySelector(".name");
 const price = document.querySelector(".price");
 const description = document.querySelector(".description");
-const parametersTable = document.querySelector(".paramaeters-table");
+const parametersTable = document.querySelector(".parameters-table");
+const addToCartButton = document.querySelector(".add-product-to-cart");
+const addToWishlistButton = document.querySelector(".add-product-to-wishlist");
 
-
-readDocumentById("products",productId).then(data=>{
-  productData = data;
-  displayProductData(productData);
+onAuthStateChanged(auth,(user)=>{
+  if(user){
+    userId=user.uid;
+    readDocumentById("users",user.uid).then(userData=>{
+      cartArray = userData.cart;
+      wishlistArray = userData.wishlist;
+    });
+    
+  }
 });
 
-
-//readData(productId);
-
-// function readData(id){
-  
-//   let q = query(productsColRef,where('__name__','==',id));
-//   onSnapshot(q,(snapshot)=>{
-//     snapshot.docs.forEach(doc => {
-//       description.innerText = doc.data().description;
-//       name.innerText = doc.data().name;
-//       price.innerText = doc.data().price;
-//     });
-//   });
-// }
+readDocumentById("products",productId).then(data=>{
+  displayProductData(data);
+  readProductParameters(data.parameters);
+});
 
 function displayProductData(productData){
   description.innerText = productData.description;
   name.innerText = productData.name;
   price.innerText = productData.price;
+}
+
+addToCartButton.addEventListener("click",(e)=>{
+  e.preventDefault();
+  cartArray.push(productId);
+  pushIfNotExists(cartArray,productId);
+  updateDoc(doc(userColRef, userId),{
+    cart: cartArray
+  });
+});
+
+addToWishlistButton.addEventListener("click",(e)=>{
+  e.preventDefault();
+  pushIfNotExists(wishlistArray,productId);
+  updateDoc(doc(userColRef, userId),{
+    wishlist: wishlistArray
+  });
+});
+
+function pushIfNotExists(array,productId){
+  if (array.indexOf(productId) === -1) {
+    array.push(productId);
+  }
+}
+
+function readProductParameters(productParam){
+  for (let key of Object.keys(productParam)) {
+    parametersTable.innerHTML += `<tr>
+    <td>Parametr</td>
+    <td>${productParam[key]}</td>
+  </tr>`;
+ }
+}
+
+function DisplayProductParameters(subcategory,parameters){
+
+
 }

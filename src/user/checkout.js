@@ -112,13 +112,6 @@ function placeOrder(deliveryOption,paymentOption,address,products,priceSummary,u
     priceSummary: priceSummary});
     
   updateDoc(doc(userColRef, userId),{
-    // orders: [{
-    //   products: products,
-    //   address: address,
-    //   deliveryType: deliveryOption,
-    //   paymentMethod: paymentOption,
-    //   priceSummary: priceSummary
-    // }]
     orders: ordersArray
   });
 }
