@@ -28,7 +28,7 @@ onAuthStateChanged(auth,(user)=>{
 
 readDocumentById("products",productId).then(data=>{
   displayProductData(data);
-  readProductParameters(data.parameters);
+  displayProductParameters(data.parameters);
 });
 
 function displayProductData(productData){
@@ -60,16 +60,11 @@ function pushIfNotExists(array,productId){
   }
 }
 
-function readProductParameters(productParam){
+function displayProductParameters(productParam){
   for (let key of Object.keys(productParam)) {
     parametersTable.innerHTML += `<tr>
-    <td>Parametr</td>
+    <td>${key}</td>
     <td>${productParam[key]}</td>
   </tr>`;
  }
-}
-
-function DisplayProductParameters(subcategory,parameters){
-
-
 }
