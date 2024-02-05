@@ -955,7 +955,7 @@ function parametersObject(){
   const parametersObj={};
   const parameterInputs = document.querySelectorAll(".parameter-input");
   parameterInputs.forEach(inputElement=>{
-    var nameAttributeValue = inputElement.getAttribute('name');
+    let nameAttributeValue = inputElement.getAttribute('name');
     parametersObj[nameAttributeValue]=inputElement.value;
   });
   return parametersObj;

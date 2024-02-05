@@ -8,6 +8,8 @@ import { collection, getFirestore, onSnapshot,
 import { getAuth,createUserWithEmailAndPassword,
   signOut,signInWithEmailAndPassword,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js';
 
+
+  
 const firebaseConfig = {
   apiKey: "AIzaSyAJ9KxuSqSgMPSoQXmqfwHx5AHbCAypzzU",
   authDomain: "pracadyplomowa-9cce3.firebaseapp.com",
@@ -26,38 +28,15 @@ const userColRef = collection(db,'users');
 
 
 
-export async function readDocumentById(coll,userId){
-  const snap = await getDoc(doc(db, coll, userId));
+export async function readDocumentById(coll,id){
+  const snap = await getDoc(doc(db, coll, id));
   if (snap.exists()){
     return snap.data();
   }else{
-    return Promise.reject(Error(`No such document: ${coll}.${id}`));
+    return Promise.reject(Error(`Nie ma takiego dokumentu: ${coll}.${id}`));
   }
     
 }
-
-// export async function readUserCartData(userId){
-//   const userSnap = await getDoc(doc(db,"users",userId));
-//   let cartItemsData=[];
-//   if (userSnap.exists()){
-//     let productIdArray = userSnap.data().cart;
-//     productIdArray.forEach(product => {
-//       let q = query(productsColRef,where('__name__','==',product));
-//       onSnapshot(q,(snapshot)=>{
-//         snapshot.docs.forEach(doc =>{
-
-//           cartItemsData.push(doc.data());
-//         });
-//       });
-      
-//     });
-
-//     return cartItemsData;
-//   }else{
-//     return Promise.reject(Error(`No such document: ${coll}.${id}`));
-//   }
-    
-// }
 
 export async function readUserCartData(userId) {
   const userSnap = await getDoc(doc(db, "users", userId));

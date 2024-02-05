@@ -1,4 +1,4 @@
-import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where,updateDoc,db} from "../index.js";
+import {onAuthStateChanged, auth, userColRef, query, doc, onSnapshot, where,updateDoc,db,signOut} from "../index.js";
 
 let userId = "";
 let userEmail = "";
@@ -8,6 +8,7 @@ const userDataContainer = document.querySelector(".user-data-container");
 const changeDataButton = document.querySelector(".change-data-button");
 const wishlistButton = document.querySelector(".wishlist-button");
 const cartButton = document.querySelector(".cart-button");
+const logoutButton = document.querySelector(".logout-button");
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -86,4 +87,12 @@ document.addEventListener("submit",(e)=>{
     });
   }
 
+});
+
+logoutButton.addEventListener("click",e=>{
+  signOut(auth).then(()=>{
+    window.location.href = "/home-page.html"
+  }).catch((err)=>{
+    console.log(err);
+  });
 });

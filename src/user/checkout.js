@@ -1,11 +1,8 @@
-import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where,updateDoc,db,arrayRemove,readDocumentById,readUserCartData } from "../index.js";
+import {onAuthStateChanged, db, auth, userColRef, doc, updateDoc, readDocumentById,readUserCartData } from "../index.js";
 
 let deliveryOptionValue = "";
 let paymentOptionValue = "";
 let userId;
-let street = "";
-let city = "";
-let postalCode = "";
 let cartCost = 0;
 let cartArray;
 let ordersArray;
@@ -51,37 +48,6 @@ paymentOptionRadios.forEach(option =>{
   });
 });
 
-
-// function readUserData(userId){
-//   let q = query(userColRef,where('__name__','==',userId));
-//   onSnapshot(q,(snapshot)=>{
-//     snapshot.docs.forEach(doc => {
-//         street = doc.data().address.street;
-//         city = doc.data().address.city;
-//         postalCode = doc.data().address.postCode;
-//         cartArray = doc.data().cart;
-//         DisplayDeliveryAddress(street,city,postalCode);
-//         readCartData(cartArray);
-        
-//     });
-//   });
-// }
-
-// function readCartData(cartArray){
-//   if (!cartArray){return;}
- 
-//   cartArray.forEach(product=>{
-//     let q = query(productsColRef,where('__name__','==',product));
-//     onSnapshot(q,(snapshot)=>{
-//       snapshot.docs.forEach(doc => {
-//           cartValue += parseFloat(doc.data().price);
-//       });
-//     });
-//   });
-// }
-
-
-
 function displayDeliveryAddress(street,city,postalCode){
   deliveryAddressForm.street.value=street;
   deliveryAddressForm.city.value=city;
@@ -117,13 +83,21 @@ function placeOrder(deliveryOption,paymentOption,address,products,priceSummary,u
 }
 
 placeOrderButton.addEventListener("click",()=>{
-  
   const address = {
     street: deliveryAddressForm.street.value,
     city: deliveryAddressForm.city.value,
     postCode: deliveryAddressForm.postCode.value
   };
   placeOrder(deliveryOptionValue,paymentOptionValue,address,cartArray,cartCost,userId);
+  
+  const docRef = doc(db,"users",userId);
+    updateDoc(docRef,{
+      cart: []
+    }).then(()=>{
+      alert('Zamówienie zostało pomyślnie złożone!');
+    }).catch(err => {
+      console.log(err);
+    });
 });
 
 

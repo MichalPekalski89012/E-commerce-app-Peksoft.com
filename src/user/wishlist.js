@@ -1,38 +1,33 @@
 // lista ulubionych produktów użytkownika
-import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where} from "../index.js";
+import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where,readDocumentById} from "../index.js";
 
 const wishlistContainer = document.querySelector(".wishlist-container");
 let wishlistArray = [];
 
-function readUserWishlist(userId){
-  let q = query(userColRef,where('__name__','==',userId));
-  onSnapshot(q,(snapshot)=>{
-    snapshot.docs.forEach(doc => {
-      wishlistArray = doc.data().wishlist;
-      displayWishlistedProducts(wishlistArray);
-    });
-  });
-}
-
-function displayWishlistedProducts(wishlistArray){
-  console.log(wishlistArray);
-  if (!wishlistArray){return;}
-  wishlistArray.forEach(product=>{
-    console.log(product);
-    let q = query(productsColRef,where('__name__','==',product));
-    onSnapshot(q,(snapshot)=>{
-      snapshot.docs.forEach(doc =>{
-        wishlistContainer.innerHTML += `<p>${doc.data().name}</p>`;
-      });
-    });
-  });
-}
-
-
 onAuthStateChanged(auth,(user)=>{
   if(user){
     const userId = user.uid;
-    readUserWishlist(userId);
-    console.log(userId);
+    readDocumentById("users",userId).then(userData=>{
+      displayWishlistedProducts(userData.wishlist);
+    });
   }
 });
+
+
+function displayWishlistedProducts(wishlistArray){
+  if (!wishlistArray){
+    wishlistContainer.innerHTML = "Lista jest pusta :("
+  }
+  else{
+    wishlistArray.forEach(product=>{
+      console.log(product);
+      let q = query(productsColRef,where('__name__','==',product));
+      onSnapshot(q,(snapshot)=>{
+        snapshot.docs.forEach(doc =>{
+          wishlistContainer.innerHTML += `<a href="/product-page.html?productId=${product}">${doc.data().name}</a><br>`;
+        });
+      });
+    });
+  }
+  
+}
