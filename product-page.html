@@ -2,6 +2,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/navigation-bar.css">
+  <link rel="stylesheet" href="./styles/product-page.css">
   <title>Document</title>
 </head>
 <body>
@@ -12,29 +14,43 @@
     <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
     <a href="/categoryPages/accessories-category.html">akcesoria</a>
     <a href="/categoryPages/gadgets-category.html">gadżety</a>
+    <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
+    <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
+    <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
   </nav>
   
 
-
-  <header>nazwa</header>
-  <p class="name"></p>
-  <header>cena</header>
-  <p class="price"></p>
-  <header>Opis</header>
-  <p class="description"></p>
+  <main>
+    <h2 class="name"></h2>
   
-  <header>parametry</header>
+    <div class="buy-box">
+      <p class="price"></p>
+      <button class="add-product-to-cart">dodaj do koszyka</button>
+      <button class="add-product-to-wishlist">dodaj do listy życzeń</button>
+      <p>Produkt dostępny!</p>
+      <p>Darmowa dostawa</p>
+    </div>
+  
+    <div class="desc-param-container">
+      <p class="description"></p>
+      <header>parametry</header>
+      <table class="parameters-table">
+        <tr>
+          <th>Parametr</th>
+          <th>wartość</th>
+        </tr>
+      </table>
+      
+    </div>
 
-  <table class="parameters-table">
-    <tr>
-      <th>Parametr</th>
-      <th>wartość</th>
-    </tr>
-    
-  </table>
 
-  <button class="add-product-to-cart">dodaj do koszyka</button>
-  <button class="add-product-to-wishlist">dodaj do listy życzeń</button>
+  </main>
+  
+  
+  
+  
+
+  
 
 
   <script type = "module" src="/src/website/productPage.js"></script>

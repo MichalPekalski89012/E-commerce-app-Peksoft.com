@@ -70,7 +70,6 @@ function changeSubcategory(category){
 }
 
 subcategoryList.addEventListener('change',()=>{
-  console.log(subcategoryList.value);
   switchParemetersTable(subcategoryList.value);
 });
 

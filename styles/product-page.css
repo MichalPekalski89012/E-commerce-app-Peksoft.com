@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  text-align: center;
+}
+
+.buy-box {
+  border: 2px solid black;
+  padding: 10px;
+  float: right;
+  width: 250px;
+}
+
+.buy-box p {
+  margin: 5px 0;
+}
+
+.desc-param-container {
+  clear: both;
+  margin-top: 20px;
+}
+
+.parameters-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.parameters-table th,
+.parameters-table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.parameters-table th {
+  background-color: #f2f2f2;
+}
