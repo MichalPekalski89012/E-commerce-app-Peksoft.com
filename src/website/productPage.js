@@ -68,3 +68,17 @@ function displayProductParameters(productParam){
   </tr>`;
  }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const thumbnails = document.querySelectorAll(".thumbnail");
+  const currentPhoto = document.getElementById("current-photo");
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener("click", function() {
+      const newSrc = thumbnail.getAttribute("src");
+      const newAlt = thumbnail.getAttribute("alt");
+      currentPhoto.setAttribute("src", newSrc);
+      currentPhoto.setAttribute("alt", newAlt);
+    });
+  });
+});
