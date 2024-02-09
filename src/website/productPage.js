@@ -34,7 +34,7 @@ readDocumentById("products",productId).then(data=>{
 function displayProductData(productData){
   description.innerText = productData.description;
   name.innerText = productData.name;
-  price.innerText = productData.price;
+  price.innerText = `${productData.price} zł`;
 }
 
 addToCartButton.addEventListener("click",(e)=>{
