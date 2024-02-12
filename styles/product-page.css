@@ -7,7 +7,7 @@ body {
 main {
   width: 90%;
   margin: 200px auto;
-  font-size: 18px;
+  font-size: 24px;
   background-color: white;
 }
 
@@ -49,6 +49,7 @@ main {
 
 .thumbnail {
   border: 1px solid;
+  border-radius: 15px;
   margin-right: 5px;
 }
 
@@ -60,19 +61,15 @@ main {
 }
 
 .buy-box {
+  height: 70%;
   width: 30%;
   border: solid 1px;
-  margin-bottom: 25%;
-  margin-top: 150px;
+  border-radius: 15px;
+  margin: 150px 100px;
   font-size: 25px;
+  text-align: center;
   
 }
-
-.buy-box button{
-  margin-bottom: 5px;
-  margin-left: 5px;
-}
-
 
 .description-section {
   border-top: 2px solid black;
