@@ -1,0 +1,52 @@
+body {
+  background-image: url(../images/tlo.png);
+  background-repeat: repeat-x repeat-y;
+
+}
+
+
+main {
+  width: 90%;
+  margin: 200px auto;
+  font-size: 24px;
+  background-color: white;
+
+}
+
+.product-container {
+  width: 80%;
+  display: flex;
+  justify-content: left;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+.product-details{
+  margin-left: 5%;
+}
+
+.product-details ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px; 
+}
+
+.product-container img {
+  width: 15%;
+  height: auto;
+}
+
+.product-rating img {
+  width: 5%;
+}
+
+.buy-box{
+  text-align: center;
+  margin-left: 5%;
+}
+
+.buy-box button{
+ margin-left: 5%;
+ margin-top: 10%;
+}
