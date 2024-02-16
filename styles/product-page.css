@@ -9,6 +9,7 @@ main {
   margin: 200px auto;
   font-size: 24px;
   background-color: white;
+  padding: 15px;
 }
 
 .basic-info-section {
@@ -31,7 +32,6 @@ main {
 .current-photo-container {
   flex: 1;
   margin: 10px auto;
-  border: 1px solid;
 }
 
 .current-photo-container img {
