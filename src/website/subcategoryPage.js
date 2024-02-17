@@ -1,14 +1,15 @@
 // podstrona generująca listę produktów w zależnosći od tego jaką kategorię wybrał użytkownik
-import { doc, onSnapshot, productsColRef, query, where, onAuthStateChanged, auth, readDocumentById,updateDoc, userColRef } from "../index.js";
+import { doc, onSnapshot, productsColRef, query, where, onAuthStateChanged, auth, readDocumentById,updateDoc, userColRef, limit} from "../index.js";
 
 const productList = document.querySelector('.products-list');
-
+const popularProductsSection = document.querySelector(".popular-products-list");
 let url_string = window.location.href;
 let url = new URL(url_string);
 let subcategory = url.searchParams.get("subcategory");
 let cartArray;
 let wishlistArray;
 let userId;
+let productIdArray = [];
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -22,10 +23,13 @@ onAuthStateChanged(auth,(user)=>{
 });
 
 
+
+
+displayPopularProducts(subcategory);
 productsListing(subcategory);
 
 function productsListing(subcategory){
-  let q = query(productsColRef,where('subcategory','==',String(subcategory)));
+  let q = query(productsColRef,where('subcategory', '==', String(subcategory)));
   onSnapshot(q,(snapshot)=>{
     snapshot.docs.forEach(doc => {
     let productId = doc.id;
@@ -90,3 +94,16 @@ document.addEventListener("click",(e)=>{
 
 //test
 
+function displayPopularProducts(){
+  let q = query(productsColRef,where('subcategory', '==', String(subcategory)),limit(4));
+  onSnapshot(q,(snapshot)=>{
+    snapshot.docs.forEach(doc => {
+      let productId = doc.id;
+    popularProductsSection.innerHTML += `<div class="popular-product">
+    <img src="/images/test/39042.png" alt="Product 1">
+    <h2><a href="/product-page.html?productId=${productId}">${doc.data().name}</a></h2>
+    <p>${doc.data().price}zł</p>
+</div>`;
+    });
+  });
+}

@@ -3,32 +3,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/navigation-bar.css">
+  <link rel="stylesheet" href="/styles/client-control-panel.css">
   <title>Document</title>
 </head>
 <body>
   <nav>
-    <a href="/categoryPages/laptops-category.html">laptopy</a>
-    <a href="/categoryPages/consoles-category.html">konsole</a>
-    <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
-    <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
-    <a href="/categoryPages/accessories-category.html">akcesoria</a>
-    <a href="/categoryPages/gadgets-category.html">gadżety</a>
-    <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
-    <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
-    <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
+    <div class="nav-top-section">
+      <img src="/path/to/logo.png" alt="Logo">
+      <input type="text" placeholder="Szukaj...">
+      <div class="user-actions">
+          <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
+          <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
+          <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
+      </div>
+  </div>
+    <div class="nav-bottom-section">
+      
+          <a href="/categoryPages/laptops-category.html">laptopy</a>
+          <a href="/categoryPages/consoles-category.html">konsole</a>
+          <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
+          <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
+          <a href="/categoryPages/accessories-category.html">akcesoria</a>
+          <a href="/categoryPages/gadgets-category.html">gadżety</a>
+      
+    </div>
   </nav>
 
-  <p>to jest panel Użytkownika</p>
+  <main>
+    <p class="user-greeting-p">to jest panel Użytkownika</p>
 
   <div class="controlpanel-container">
-    <button class="change-data-button">Zmień dane</button>
-    <button class="wishlist-button">Lista życzeń</button>
-    <button class="cart-button">Koszyk</button>
-    <button class="orders-button">Zamówienia</button>
-    <button class="logout-button">Wyloguj się</button>
+    <div class="buttons-container">
+      <button class="change-data-button">Zmień dane</button>
+      <button class="wishlist-button">Lista życzeń</button>
+      <button class="cart-button">Koszyk</button>
+      <button class="orders-button">Zamówienia</button>
+      <button class="logout-button">Wyloguj się</button>
+    </div>
+    
     <div class="user-data-container"></div>
   </div>
 
+  </main>
+  
   <script type="module" src="/src/user/control-panel.js"></script>
 </body>
 </html>

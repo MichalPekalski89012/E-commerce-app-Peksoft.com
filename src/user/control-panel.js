@@ -9,6 +9,7 @@ const changeDataButton = document.querySelector(".change-data-button");
 const wishlistButton = document.querySelector(".wishlist-button");
 const cartButton = document.querySelector(".cart-button");
 const logoutButton = document.querySelector(".logout-button");
+const userGreetingPar = document.querySelector(".user-greeting-p");
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -29,18 +30,14 @@ function readUserData(userId){
 }
 
 function displayUserData(data){
+  userGreetingPar.innerText = `Witaj, ${data.name}!`
   userDataContainer.innerHTML = `<h2>Adres dostawcy</h2>
-  <p>ulica:</p>
-  <p>${data.address.street}</p>
-  <p>miasto:</p>
-  <p>${data.address.city}</p>
-  <p>kod pocztowy:</p>
-  <p>${data.address.postCode}</p>
+  <p>ulica: ${data.address.street}</p>
+  <p>miasto: ${data.address.city}</p>
+  <p>kod pocztowy: ${data.address.postCode}</p>
   <h2>Dane kontaktowe</h2>
-  <p>numer telefonu:</p>
-  <p>${data.phoneNumber}</p>
-  <p>e-mail:</p>
-  <p>${userEmail}</p>`;
+  <p>numer telefonu: ${data.phoneNumber}</p>
+  <p>e-mail: ${userEmail}</p>`;
 }
 
 changeDataButton.addEventListener("click",()=>{

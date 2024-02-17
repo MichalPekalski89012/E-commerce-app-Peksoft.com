@@ -26,6 +26,12 @@ main {
   margin-left: 5%;
 }
 
+.product-rating img{
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
 .product-details ul{
   list-style-type: none;
   padding: 0;

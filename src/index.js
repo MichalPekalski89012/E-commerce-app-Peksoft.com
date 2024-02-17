@@ -3,7 +3,7 @@ import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-
 
 import { collection, getFirestore, onSnapshot,
   addDoc,deleteDoc,doc,query,where, orderBy,
-  serverTimestamp,getDoc,updateDoc,setDoc,arrayRemove,getDocs} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+  serverTimestamp,getDoc,updateDoc,setDoc,arrayRemove,getDocs, limit} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
 
 import { getAuth,createUserWithEmailAndPassword,
   signOut,signInWithEmailAndPassword,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js';
@@ -67,5 +67,5 @@ export async function readUserCartData(userId) {
 
 
 
-export {app, db, productsColRef,userColRef, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, updateDoc, getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, auth,setDoc,arrayRemove};
+export {app, db, productsColRef,userColRef, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, updateDoc, getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, auth,setDoc,arrayRemove,limit};
 

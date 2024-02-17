@@ -3,45 +3,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/navigation-bar.css">
-  <link rel="stylesheet" href="/styles/category-page.css">
+  <link rel="stylesheet" href="/styles/subcategory.css">
   <title>Karty graficzne</title>
 </head>
 <body>
   <nav>
-    <a href="/categoryPages/laptops-category.html">laptopy</a>
-    <a href="/categoryPages/consoles-category.html">konsole</a>
-    <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
-    <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
-    <a href="/categoryPages/accessories-category.html">akcesoria</a>
-    <a href="/categoryPages/gadgets-category.html">gadżety</a>
-    <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
-    <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
-    <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
+    <div class="nav-top-section">
+      <img src="/path/to/logo.png" alt="Logo">
+      <input type="text" placeholder="Szukaj...">
+      <div class="user-actions">
+          <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
+          <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
+          <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
+      </div>
+  </div>
+  <div class="nav-bottom-section">
+      
+          <a href="/categoryPages/laptops-category.html">laptopy</a>
+          <a href="/categoryPages/consoles-category.html">konsole</a>
+          <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
+          <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
+          <a href="/categoryPages/accessories-category.html">akcesoria</a>
+          <a href="/categoryPages/gadgets-category.html">gadżety</a>
+      
+  </div>
   </nav>
   <main>
     <h1>Karty graficzne</h1>
     <section class="popular-products-section">
       <h2>Popularne</h2>
-      <div class="popular-products-list"><div class="popular-product">
-        <img src="/images/test/39042.png" alt="Product 1">
-        <h2>Product 1</h2>
-        <p>$19.99</p>
-    </div>
-    <div class="popular-product">
-        <img src="/images/test/39042.png" alt="Product 2">
-        <h2>Product 2</h2>
-        <p>$24.99</p>
-    </div>
-    <div class="popular-product">
-        <img src="/images/test/39042.png" alt="Product 3">
-        <h2>Product 3</h2>
-        <p>$29.99</p>
-    </div>
-    <div class="popular-product">
-        <img src="/images/test/39042.png" alt="Product 4">
-        <h2>Product 4</h2>
-        <p>$34.99</p>
-    </div></div>
+      <div class="popular-products-list">
+      <template>
+        <div class="popular-products-list"><div class="popular-product">
+          <img src="/images/test/39042.png" alt="Product 1">
+          <h2>Product 1</h2>
+          <p>$19.99</p>
+      </div>
+      <div class="popular-product">
+          <img src="/images/test/39042.png" alt="Product 2">
+          <h2>Product 2</h2>
+          <p>$24.99</p>
+      </div>
+      <div class="popular-product">
+          <img src="/images/test/39042.png" alt="Product 3">
+          <h2>Product 3</h2>
+          <p>$29.99</p>
+      </div>
+      <div class="popular-product">
+          <img src="/images/test/39042.png" alt="Product 4">
+          <h2>Product 4</h2>
+          <p>$34.99</p>
+      
+      </template>
+      </div>
       
   </section>
 
