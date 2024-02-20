@@ -35,6 +35,7 @@ function displayUserData(data){
   <p>ulica: ${data.address.street}</p>
   <p>miasto: ${data.address.city}</p>
   <p>kod pocztowy: ${data.address.postCode}</p>
+  <hr>
   <h2>Dane kontaktowe</h2>
   <p>numer telefonu: ${data.phoneNumber}</p>
   <p>e-mail: ${userEmail}</p>`;

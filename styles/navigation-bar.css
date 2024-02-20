@@ -59,3 +59,8 @@ nav a:hover {
   margin-right: 20px;
 }
 
+/* dostosować logo!!! */
+.logo{
+  width: 50%;
+  height: 50%;
+}

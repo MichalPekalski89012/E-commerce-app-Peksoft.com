@@ -1,0 +1,25 @@
+footer{
+  background-color: whitesmoke;
+}
+
+.footer-container{
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  gap: 10%;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.author{
+  text-align: center;
+}
