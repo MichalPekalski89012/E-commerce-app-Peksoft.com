@@ -54,7 +54,8 @@ function productsListing(subcategory){
       <button class="add-to-cart-button" data-product-id="${productId}">Dodaj do koszyka</button>
     </div>
     
-  </div>`
+  </div>
+  <hr>`
     });
   });
 }

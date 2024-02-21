@@ -4,12 +4,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/navigation-bar.css">
   <link rel="stylesheet" href="/styles/subcategory.css">
+  <link rel="stylesheet" href="/styles/footer.css">
   <title>Karty graficzne</title>
 </head>
 <body>
   <nav>
     <div class="nav-top-section">
-      <img src="/path/to/logo.png" alt="Logo">
+      <a href="/home-page.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
       <input type="text" placeholder="Szukaj...">
       <div class="user-actions">
           <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
@@ -17,7 +18,7 @@
           <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
       </div>
   </div>
-  <div class="nav-bottom-section">
+    <div class="nav-bottom-section">
       
           <a href="/categoryPages/laptops-category.html">laptopy</a>
           <a href="/categoryPages/consoles-category.html">konsole</a>
@@ -26,8 +27,9 @@
           <a href="/categoryPages/accessories-category.html">akcesoria</a>
           <a href="/categoryPages/gadgets-category.html">gadżety</a>
       
-  </div>
+    </div>
   </nav>
+
   <main>
     <h1>Karty graficzne</h1>
     <section class="popular-products-section">
@@ -58,7 +60,7 @@
       </div>
       
   </section>
-
+  <hr class="section-divider-hr">
     <div class="products-list">
       <template>
         <div class="product-container">
@@ -89,7 +91,43 @@
     </div>
   </main>
   
-  
+  <footer>
+    <div class="footer-container">
+      <div class="category-pages-container">
+        <h3>Kategorie</h3>
+        <ul>
+          <li><a href="/categoryPages/laptops-category.html">Laptopy</a></li>
+          <li><a href="/categoryPages/consoles-category.html">Konsole</a></li>
+          <li><a href="/categoryPages/hardware-category.html">Podzespoły komputerowe</a></li>
+          <li><a href="/categoryPages/peripherals-category.html">Urządzenia peryferyjne</a></li>
+          <li><a href="/categoryPages/accessories-category.html">Akcesoria</a></li>
+          <li><a href="/categoryPages/gadgets-category.html">Gadżety</a></li>
+        </ul>
+      </div>
+      <div class="client-pages-container">
+        <h3>Klient</h3>
+        <ul>
+          <li><a href="/clientPages/login-page.html">Panel użytkownika</a></li>
+          <li><a href="/clientPages/wishlist.html">Lista życzeń</a></li>
+          <li><a href="/clientPages/cart.html">Koszyk</a></li>
+        </ul>
+      </div>
+      <div class="contact-container">
+        <h3>Kontakt</h3>
+        <address>
+          <p>123456789</p>
+          <p>pon.-pt.  8:00-16:00</p>
+          <a href="mailto:peksoft@peksoft.pl">peksoft@peksoft.pl</a>
+        </address>
+        <div class="social-media-icon-container">
+          <a href="https://www.facebook.com/">facebook</a>
+          <a href="https://www.instagram.com/">instagram</a>
+          <a href="https://www.youtube.com/">youtube</a>
+        </div>
+      </div>
+    </div>
+    <p class="author">Peksoft 2024 stworzone przez: Michał Pękalski</p>
+  </footer>
 
 
 

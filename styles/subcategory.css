@@ -9,28 +9,24 @@ main {
   width: 90%;
   margin: 200px auto;
   font-size: 24px;
-  background-color: white;
-
+  background-color: #05092e;
+  color: white;
+  font-family: sans-serif;
+  border: 5px solid #306082;
 }
 
 /* lista produktów */
 .product-container {
   width: 80%;
   display: flex;
-  justify-content: left;
-  border: 1px solid;
-  border-radius: 5px;
+  justify-content: center;
   margin: 10px auto;
 }
 .product-details{
   margin-left: 5%;
 }
 
-.product-rating img{
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
+
 
 .product-details ul{
   list-style-type: none;
@@ -73,6 +69,7 @@ main {
 .popular-product {
   flex-basis: calc(25% - 20px); 
   text-align: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -91,3 +88,16 @@ main {
   font-size: 16px;
 }
 
+.section-divider-hr{
+  height: 2px;
+  width: 100%;
+  background-color: #306082;
+  border-color: #306082;
+}
+
+hr{
+  height: 2px;
+  width: 80%;
+  background-color: #306082;
+  border-color: #306082;
+}
