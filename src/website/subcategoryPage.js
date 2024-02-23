@@ -54,8 +54,7 @@ function productsListing(subcategory){
       <button class="add-to-cart-button" data-product-id="${productId}">Dodaj do koszyka</button>
     </div>
     
-  </div>
-  <hr>`
+  </div>`
     });
   });
 }
@@ -101,9 +100,14 @@ function displayPopularProducts(){
     snapshot.docs.forEach(doc => {
       let productId = doc.id;
     popularProductsSection.innerHTML += `<div class="popular-product">
-    <img src="/images/test/39042.png" alt="Product 1">
+    <img src="/images/test/39042.png" alt="Product 1" class="popular-product-image">
+    <hr>
     <h2><a href="/product-page.html?productId=${productId}">${doc.data().name}</a></h2>
     <p>${doc.data().price}zł</p>
+    <div class="user-actions populars">
+    <img src="/images/icons/wishlistIconProductListing.png" alt="Add to wishlist" class="wishlist-button-small">
+            <button class="quick-buy-button">Szybki Zakup</button>
+          </div>
 </div>`;
     });
   });

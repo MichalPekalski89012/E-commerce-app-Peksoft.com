@@ -1,7 +1,6 @@
 body {
   background-image: url(../images/tlo.png);
   background-repeat: repeat-x repeat-y;
-
 }
 
 
@@ -9,10 +8,10 @@ main {
   width: 90%;
   margin: 200px auto;
   font-size: 24px;
-  background-color: #05092e;
-  color: white;
+  background-color: white;
+  color: black;
   font-family: sans-serif;
-  border: 5px solid #306082;
+  
 }
 
 /* lista produktów */
@@ -55,9 +54,7 @@ main {
 }
 
 /* Popularne */
-.popular-products-section h2{
-  margin-left: 25%;
-}
+
 .popular-products-list {
   display: flex;
   justify-content: space-between;
@@ -66,38 +63,65 @@ main {
   max-width: 800px;
 }
 
+
 .popular-product {
   flex-basis: calc(25% - 20px); 
-  text-align: center;
+  text-align: left;
   justify-content: center;
-  margin-bottom: 20px;
+  color: black;
+  border: 1px solid  #ddd;
+  border-radius: 5px;
+  padding: 0 10px;
 }
 
-.popular-product img {
+.popular-product-image {
   max-width: 100%;
   height: auto;
 }
-
+.popular-product hr{
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: #696a6a;;
+}
 .popular-product h2 {
-  margin-top: 10px;
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .popular-product p {
-  margin-top: 5px;
+  margin-top: 2px;
   font-size: 16px;
 }
 
 .section-divider-hr{
   height: 2px;
   width: 100%;
-  background-color: #306082;
-  border-color: #306082;
+  background-color: #05092e;
+  border-color: #05092e;
 }
 
-hr{
-  height: 2px;
-  width: 80%;
-  background-color: #306082;
-  border-color: #306082;
+.user-actions.populars{
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
+
+.wishlist-button-small{
+  width: 20%;
+  margin: 8px 10px 8px 0;
+}
+
+.quick-buy-button{
+  font-size: 16px;
+  width: 80%;
+  border-radius: 5px;
+  border-color: #05092e;
+  background-color: #05092e;
+  color: white;
+}
+
+.popular-product a {
+  text-decoration: none;
+  color: #696a6a;
+}
+
