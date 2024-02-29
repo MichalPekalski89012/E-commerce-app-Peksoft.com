@@ -5,13 +5,52 @@ body {
 
 
 main {
-  width: 90%;
+  width: 98%;
   margin: 200px auto;
   font-size: 24px;
   background-color: white;
   color: black;
   font-family: sans-serif;
+  display: flex;
   
+}
+
+
+.products-section {
+  width: 85%;
+}
+
+/* filtry */
+.filters-section {
+  width: 15%;
+  border: 1px solid #696a6a;
+  border-radius: 5px;
+  height: 50%;
+  margin: 20px 10px 0 10px;
+  padding-left: 10px;
+}
+
+
+
+.price-filter input{
+  width: 100px;
+  display: inline;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.checkboxes{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  line-height: 16px;
+  cursor: pointer;
+  margin: 0px;
+  flex-wrap: wrap;
+}
+
+input[type="checkbox"]{
+  margin-top: 25px;
 }
 
 /* lista produktów */
@@ -57,7 +96,8 @@ main {
 
 .popular-products-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
   margin: 20px auto;
   max-width: 800px;
@@ -82,7 +122,7 @@ main {
   width: 100%;
   border: none;
   height: 1px;
-  background-color: #696a6a;;
+  background-color: #696a6a;
 }
 .popular-product h2 {
   font-size: 12px;
@@ -114,7 +154,7 @@ main {
 .quick-buy-button{
   font-size: 16px;
   width: 80%;
-  border-radius: 5px;
+  border-radius: 25px;
   border-color: #05092e;
   background-color: #05092e;
   color: white;
