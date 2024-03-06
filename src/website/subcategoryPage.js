@@ -3,6 +3,8 @@ import { doc, onSnapshot, productsColRef, query, where, onAuthStateChanged, auth
 
 const productList = document.querySelector('.products-list');
 const popularProductsSection = document.querySelector(".popular-products-list");
+const priceSlider = document.querySelector(".price-slider");
+const maxPriceText = document.querySelector(".max-price-text");
 let url_string = window.location.href;
 let url = new URL(url_string);
 let subcategory = url.searchParams.get("subcategory");
@@ -10,6 +12,8 @@ let cartArray;
 let wishlistArray;
 let userId;
 let productIdArray = [];
+
+maxPriceText.innerText = `${priceSlider.value} zł`;
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -22,7 +26,9 @@ onAuthStateChanged(auth,(user)=>{
   }
 });
 
-
+priceSlider.oninput = function() {
+  maxPriceText.innerText = `${this.value} zł`;
+}
 
 
 displayPopularProducts(subcategory);

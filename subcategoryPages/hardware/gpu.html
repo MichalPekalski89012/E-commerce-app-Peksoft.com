@@ -34,10 +34,10 @@
     <section class="filters-section">
       <h2>Filtry:</h2>
       <div class="filters">
-        <h3>Cena</h3>
+        <h3>Cena(do)</h3>
         <div class="price-filter">
-          <label for="minPrice"><input type="number" placeholder=" Od" name="minPrice"> -</label>
-          <label for="maxPrice"><input type="number" placeholder=" Do" name="maxPrice"></label>
+          <p class="max-price-text">100zł</p>
+          <input type="range" min="1" max="10000" value="50" class="price-slider">
         </div>
         <h3>Producent</h3>
         <div class="manufacturer-filter checkboxes">
@@ -53,6 +53,20 @@
           <label for="12gb"><input type="checkbox" id="12gb"> 12 GB</label>
           <label for="16gb"><input type="checkbox" id="16gb"> 16 GB</label>
           <label for="24gb"><input type="checkbox" id="24gb"> 24 GB</label>
+        </div>
+        <h3>Rekomendowna moc zasilacza</h3>
+        <div class="recommended-pwrsupply-filter checkboxes">
+          <label for="500w"><input type="checkbox" id="500w"> 500W</label>
+          <label for="550w"><input type="checkbox" id="550w"> 550W</label>
+          <label for="600w"><input type="checkbox" id="600W"> 600W</label>
+          <label for="650w"><input type="checkbox" id="24gb"> 650W</label>
+          <label for="700w"><input type="checkbox" id="700w"> 700W</label>
+          <label for="750w"><input type="checkbox" id="750w"> 750W</label>
+        </div>
+        <h3>Efektywne taktowanie rdzenia</h3>
+        <div class="core-frequency-filter">
+          <input type="number" placeholder="500 MHz"> - 
+          <input type="number" placeholder="10000 MHz">
         </div>
         <h3>Układ Graficzny</h3>
         <div class="architecture-filter checkboxes">
