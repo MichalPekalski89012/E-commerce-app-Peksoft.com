@@ -1,3 +1,34 @@
-// kod generujący zawartość strony kategori. Bedzie generować m.in.
-// polecane w danej kategorii
-// listę podkategorii
+import { doc, onSnapshot, productsColRef, query, where, onAuthStateChanged, auth, readDocumentById,updateDoc, userColRef, limit} from "../index.js";
+
+let url_string = window.location.href;
+let url = new URL(url_string);
+let category = url.searchParams.get("category");
+
+const salesContainer = document.querySelector(".sales-container");
+
+
+displayDiscountedProducts(category);
+
+function displayDiscountedProducts(category){
+  let q = query(productsColRef,where('category', '==', String(category)),limit(4));
+  onSnapshot(q,(snapshot)=>{
+    snapshot.docs.forEach(doc => {
+      let productId = doc.id;
+      salesContainer.innerHTML += `<div class="discounted-product-container">
+      <img src="/images/test/39042.png" alt="Product 1" class="popular-product-image">
+      <hr>
+      <h2><a href="/product-page.html?productId=${productId}">${doc.data().name}</a></h2>
+      <div class="price-container">
+      <p class="old-price">${doc.data().price} zł</p>
+      <p class="new-price">${doc.data().price - 200} zł</p>
+      </div>
+    
+    <div class="user-actions discounted">
+      <img src="/images/icons/wishlistIconProductListing.png" alt="Add to wishlist" class="wishlist-button-small">
+      <button class="quick-buy-button">Tani Zakup</button>
+    </div>
+  </div>`;
+    });
+  });
+
+}

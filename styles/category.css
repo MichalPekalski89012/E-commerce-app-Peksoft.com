@@ -1,6 +1,7 @@
 body {
   background-image: url(../images/tlo.png);
   background-repeat: repeat-x repeat-y;
+  
 }
 
 main {
@@ -58,4 +59,83 @@ h1{
 .category-card p {
   margin: 0;
   color: #888;
+}
+
+/* sekcja z przecenionymi produktami */
+
+.sales-container {
+  display: flex;
+  column-gap: 20px;
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+.discounted-product-container { 
+  text-align: left;
+  justify-content: center;
+  color: black;
+  border: 2px solid  #05092e;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.popular-product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.discounted-product-container hr{
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: #696a6a;
+}
+
+.discounted-product-container h2 {
+  font-size: 12px;
+}
+
+.price-container{
+  display: flex;
+  align-items: baseline;
+  justify-content: first baseline;
+  column-gap: 15px;
+  margin: 10px auto -15px auto;
+}
+
+.old-price {
+  margin-top: 2px;
+  font-size: 16px;
+  text-decoration: line-through;
+  color: #696a6a;
+  
+}
+
+.new-price{
+  font-size: 20px;
+}
+
+.user-actions.discounted{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wishlist-button-small{
+  width: 20%;
+  margin: 8px 10px 8px 0;
+}
+
+.quick-buy-button{
+  font-size: 16px;
+  width: 80%;
+  border-radius: 25px;
+  border-color: #05092e;
+  background-color: #05092e;
+  color: white;
+}
+
+.discounted-product-container a {
+  text-decoration: none;
+  color: black;
 }

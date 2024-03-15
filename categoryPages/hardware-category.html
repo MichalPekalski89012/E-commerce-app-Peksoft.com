@@ -20,18 +20,39 @@
   </div>
     <div class="nav-bottom-section">
       
-          <a href="/categoryPages/laptops-category.html">laptopy</a>
-          <a href="/categoryPages/consoles-category.html">konsole</a>
-          <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
-          <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
-          <a href="/categoryPages/accessories-category.html">akcesoria</a>
-          <a href="/categoryPages/gadgets-category.html">gadżety</a>
+          <a href="/categoryPages/laptops-category.html?category=laptops">laptopy</a>
+          <a href="/categoryPages/consoles-category.html?category=consoles">konsole</a>
+          <a href="/categoryPages/hardware-category.html?category=hardware">podzespoły komputerowe</a>
+          <a href="/categoryPages/peripherals-category.html?category=peripherals">urządzenia peryferyjne</a>
+          <a href="/categoryPages/accessories-category.html?category=accessories">akcesoria</a>
+          <a href="/categoryPages/gadgets-category.html?category=collectibles">gadżety</a>
       
     </div>
   </nav>
 
   <main>
     <h1>podzespoły komputerowe</h1>
+    <h2>Promocje</h2>
+    <div class="sales-container"></div>
+    <template>
+        <div class="discounted-product-container">
+          <img src="/images/test/39042.png" alt="Product 1" class="popular-product-image">
+            <hr>
+          <h2><a href="/product-page.html?productId=${productId}">${doc.data().name}</a></h2>
+          <div class="price-container">
+            <p class="old-price">1000 zł</p>
+            <p class="new-price">800 zł</p>
+          </div>
+          
+          <div class="user-actions discounted">
+            <img src="/images/icons/wishlistIconProductListing.png" alt="Add to wishlist" class="wishlist-button-small">
+            <button class="quick-buy-button">Tani Zakup</button>
+          </div>
+        </div>
+      </div>
+    </template>
+    
+
 <div class="category-container">
     
   <div class="category-card">

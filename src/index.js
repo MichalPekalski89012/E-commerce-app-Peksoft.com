@@ -61,7 +61,7 @@ export async function readUserCartData(userId) {
 
     return cartItemsData;
   } else {
-    return Promise.reject(Error(`No such document: ${coll}.${id}`));
+    return Promise.reject(Error(`Nie ma takiego dokumentu: ${coll}.${id}`));
   }
 }
 
