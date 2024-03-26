@@ -5,52 +5,14 @@ body {
 }
 
 
-main {
-  width: 60%;
+main{
+  color: black;
+  background-color: white;
   margin: 200px auto;
-  font-size: 24px;
-  background-color: #05092e;
-  text-align: center;
-  color: white;
-  border: 1px solid;
-  border-radius: 5px;
-  border-color: #306082;
+  width: 90%;
 }
 
-.controlpanel-container {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 10px;
-  margin-bottom: 10px;
-  
-}
-
-.buttons-container button {
-  width: 100%;
-  font-size: 24px;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #306082;
-  color: white;
-}
-
-.user-data-container {
-  
-  padding-top: 10px;
-}
-
-.user-data-container h2 {
-  margin-bottom: 5px;
-  padding-bottom: 5px;
-}
-
-hr {
-  border: 2px solid #306082;
+img{
+  width: 150px;
 }
 

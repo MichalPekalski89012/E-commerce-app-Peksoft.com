@@ -2,46 +2,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/navigation-bar-copy.css">
+  <link rel="stylesheet" href="/styles/navigation-bar.css">
   <link rel="stylesheet" href="/styles/client-control-panel.css">
   <link rel="stylesheet" href="/styles/footer.css">
   <title>Document</title>
 </head>
 <body>
-  <nav>
-    <div class="nav-top-section">
-      <a href="/home-page.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
-      <input type="text" placeholder="Szukaj...">
-      <div class="user-actions">
-          <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
-          <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
-          <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
-      </div>
-  </div>
-    <div class="nav-bottom-section">
-          <a href="/categoryPages/laptops-category.html">laptopy</a>
-          <a href="/categoryPages/consoles-category.html">konsole</a>
-          <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
-          <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
-          <a href="/categoryPages/accessories-category.html">akcesoria</a>
-          <a href="/categoryPages/gadgets-category.html">gadżety</a>
+  <header>
+    <div class="navbar">
+      <div class="nav-top-section">
+        <a href="/home-page.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
+        <input type="text" placeholder="Szukaj...">
+        <div class="user-nav-actions">
+            <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
+            <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
+            <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
+        </div>
     </div>
-  </nav>
+      <div class="nav-bottom-section">
+        
+            <a href="/categoryPages/laptops-category.html?category=laptops">laptopy</a>
+            <a href="/categoryPages/consoles-category.html?category=consoles">konsole</a>
+            <a href="/categoryPages/hardware-category.html?category=hardware">podzespoły komputerowe</a>
+            <a href="/categoryPages/peripherals-category.html?category=peripherals">urządzenia peryferyjne</a>
+            <a href="/categoryPages/accessories-category.html?category=accessories">akcesoria</a>
+            <a href="/categoryPages/gadgets-category.html?category=collectibles">gadżety</a>
+        
+      </div>
+    </div>
+  </header>
 
   <main>
-    <p class="user-greeting-p"></p>
-
-  <div class="controlpanel-container">
-    <div class="buttons-container">
-      <button class="change-data-button">Zmień dane</button>
-      <button class="wishlist-button">Lista życzeń</button>
-      <button class="cart-button">Koszyk</button>
-      <button class="orders-button">Zamówienia</button>
-      <button class="logout-button">Wyloguj się</button>
+    <div class="user-actions-container">
+      <p class="user-greeting-p"></p>
+      <a href="#wishlist">Lista życzeń</a>
+      <a href="#orders">Zamowienia</a>
+      <a href="#reviews">Opinie</a>
+      <a href="#settings">Ustawienia konta</a>
     </div>
-    <hr>
-    <div class="user-data-container"></div>
-  </div>
+    <div class="user-data-container">
+
+      <div class="wishlist-data-container">
+        <h2 id="wishlist">Lista życzeń</h2>
+        <div class="wishlisted-products-list">
+          <template>
+            <div class="wishlisted-product">
+              <img src="/images/test/39042.png" alt="">
+              <p>RTX 4080</p>
+            </div>
+          </template>
+          
+        </div>
+      </div>
+
+      <div class="orders-data-container">
+        <h2 id="orders">Zamówienia</h2>
+      </div>
+
+      <div class="reviews-data-container">
+        <h2 id="reviews">Produkty do recenzji</h2>
+      </div>
+    </div>
+
+    <div class="settings-container">
+      <h2 id="settings">Ustawienia konta</h2>
+    </div>
 
   </main>
   <footer>
