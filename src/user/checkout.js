@@ -22,11 +22,11 @@ onAuthStateChanged(auth,(user)=>{
     userId = user.uid;
     readDocumentById("users",userId).then(userData=>{
       ordersArray = userData.orders;
+      cartArray = userData.cart;
       displayDeliveryAddress(userData.address.street,userData.address.city,userData.address.postCode);
     });
 
     readUserCartData(userId).then(cartData=>{
-      cartArray = cartData;
       displayProductsInCart(cartData);
       displayCartCost(cartData);
   });

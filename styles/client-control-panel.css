@@ -16,3 +16,33 @@ img{
   width: 150px;
 }
 
+.status-icon {
+  width: 32px;
+  height: 32px;
+  margin-top: 8px;
+}
+
+.status-container{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  border: 1px solid black;
+}
+
+.divider{
+  border: 1px solid #05092e;
+  background-color: #05092e;
+  width: 10%;
+  height: 1px;
+  margin: 24px 16px 0 16px;
+}
+
+.status{
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+
+.done {
+  opacity: 0.75;
+}

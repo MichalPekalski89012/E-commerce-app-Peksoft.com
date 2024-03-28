@@ -11,13 +11,14 @@ onAuthStateChanged(auth,(user)=>{
     userId = user.uid;
     readDocumentById("users",userId).then((doc) => {
       displayWishlistedProducts(doc.wishlist);
+      displayOrders(doc.orders);
     });
   }
 });
 
 function displayWishlistedProducts(wishlist){
-  wishlist.forEach(element => {
-      readDocumentById("products", element).then((productDoc) =>{
+  wishlist.forEach(product => {
+      readDocumentById("products", product).then((productDoc) =>{
         wishlistedProductsList.innerHTML += `<div class="wishlisted-product">
         <img src="/images/test/39042.png" alt="">
         <p>${productDoc.name}</p>
@@ -26,26 +27,13 @@ function displayWishlistedProducts(wishlist){
   });
 }
 
-// document.addEventListener("submit",(e)=>{
-//   e.preventDefault();
-//   const target = e.target.closest(".edit-user-data-form");
-//   if(target){
-//     const docRef = doc(db,"users",userId);
-//     updateDoc(docRef,{
-//       address:{
-//         street : e.target.street.value,
-//         city : e.target.city.value,
-//         postCode : e.target.postalCode.value
-//       },
-//       phoneNumber : e.target.phoneNumber.value,
-//     }).then(()=>{
-//       displayUserData(data);
-//     }).catch(err => {
-//       console.log(err.message);
-//     });
-//   }
-
-// });
+function displayOrders(orders){
+  orders.forEach(order =>{
+    readDocumentById("users",order).then(orderData =>{
+      
+    });
+  });
+}
 
 logoutButton.addEventListener("click",e=>{
   signOut(auth).then(()=>{
