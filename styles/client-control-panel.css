@@ -16,6 +16,10 @@ img{
   width: 150px;
 }
 
+.ordered-product-image{
+  width: 100px;
+}
+
 .status-icon {
   width: 32px;
   height: 32px;
@@ -26,7 +30,6 @@ img{
   display: flex;
   flex-direction: row;
   width: 80%;
-  border: 1px solid black;
 }
 
 .divider{
@@ -43,6 +46,17 @@ img{
   column-gap: 16px;
 }
 
-.done {
+.in-progress {
   opacity: 0.75;
+}
+
+.ordered-product-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.ordered-product-info{
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
 }
