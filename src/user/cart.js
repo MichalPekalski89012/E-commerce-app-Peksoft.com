@@ -32,7 +32,8 @@ function displayCart(cartArray){
     let q = query(productsColRef,where('__name__','==',product));
     onSnapshot(q,(snapshot)=>{
       snapshot.docs.forEach(doc =>{
-        cartContainer.innerHTML += `<div class="product-container" style="display: flex;">
+        cartContainer.innerHTML += `<div class="product-container">
+        <img src="/images/test/39042.png" alt="">
         <p>${doc.data().name} ${doc.data().price}</p>
         <button class="delete-product-button" data-product-id="${product}">usuń</button>
       </div>`;

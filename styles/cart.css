@@ -1,0 +1,84 @@
+body {
+    background-image: url(../images/tlo.png);
+    background-repeat: repeat-x repeat-y;
+    font-family:sans-serif;
+  }
+
+main{
+    color: black;
+    background-color: white;
+    margin: 124px auto 16px auto;
+    width: 90%;
+}
+
+img{
+    width: 100px;
+}
+
+h1{
+    margin-left: 8px;
+}
+
+.cart-info{
+    display: flex;
+    column-gap: 164px;
+    padding: 16px 16px;
+}
+
+.product-container{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #638094;
+}
+
+.product-container:last-of-type{
+    border-bottom: none;
+}
+
+.delete-product-button{
+    margin-top: 14px;
+    margin-left: 8px;
+    border-radius: 12px;
+    border: 1px solid #306082;
+    background-color: #306082;
+    color: white;
+    min-width: 64px;
+}
+
+.cart-container {
+    border: 1px solid #638094;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.checkout-actions{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #638094;
+    border-radius: 12px;
+    height: 100px;
+    width: 50%;
+}
+
+.price-summary-container{
+    background-color: #306082;
+    color: white;
+    display: flex;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 32px;
+    padding: 16px 0;
+}
+
+.price-summary-container span{
+    width: 50%;
+    font-size: 24px;
+}
+
+.checkout-button{
+    height: 64px;
+    border-radius: 12px;
+    margin: 8px;
+
+}
