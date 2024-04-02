@@ -30,8 +30,11 @@ function displayWishlistedProducts(wishlist){
   });
 }
 
-function displayOrders(orders){ 
+function displayOrders(orders){
+  let productsArray; 
   orders.forEach(order =>{
+    productsArray = order.products;
+    console.log(order.products);
     ordersList.innerHTML +=`<div class="order">
     <div class="status-container">
       <div class="status">
@@ -70,16 +73,20 @@ function displayOrders(orders){
     </div>
   </div>
   <h3>Zamówione produkty</h3>
-  <div class="ordered-products-container">
-  <div class="ordered-product-container">
-  <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
-  <div class="ordered-product-info">
-    <h4>RTX 3080</h4>
-    <p>4500zł</p>
-  </div>
-</div>
-  </div>
+  <div class="ordered-products-container"></div>
 </div>`;
+  });
+  const tester = document.querySelector(".ordered-products-container");
+  productsArray.forEach(product=>{
+    readDocumentById("products",product).then(productData=>{
+      tester.innerHTML += `<div class="ordered-product-container">
+      <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
+      <div class="ordered-product-info">
+        <h4>${productData.name}</h4>
+        <p>${productData.price}zł</p>
+      </div>
+    </div>`;
+    });
   });
 }
 
