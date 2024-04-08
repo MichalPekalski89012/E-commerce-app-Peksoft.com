@@ -3,8 +3,10 @@ import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnap
 
 let userId = "";
 export let cartArray = [];
+let priceSummaryValue = 0;
 const cartContainer = document.querySelector(".cart-container");
 const checkoutButton = document.querySelector(".checkout-button");
+const priceSummaryText = document.querySelector(".price-summary-text")
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -19,8 +21,7 @@ function readUserCart(userId){
     snapshot.docs.forEach(doc => {
       cartArray = doc.data().cart;
       displayCart(cartArray);
-      console.log(cartArray);
-      console.log(userId);
+      // 
     });
   });
 }
@@ -37,7 +38,9 @@ function displayCart(cartArray){
         <p>${doc.data().name} ${doc.data().price}</p>
         <button class="delete-product-button" data-product-id="${product}">usuń</button>
       </div>`;
+      priceSummaryValue += parseFloat(doc.data().price);
       });
+      priceSummaryText.innerHTML = `${priceSummaryValue} zł`;
     });
   });
 }

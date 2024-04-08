@@ -21,7 +21,7 @@ h1{
 
 .cart-info{
     display: flex;
-    column-gap: 164px;
+    column-gap: 224px;
     padding: 16px 16px;
 }
 
@@ -56,8 +56,8 @@ h1{
     flex-direction: column;
     border: 1px solid #638094;
     border-radius: 12px;
-    height: 100px;
-    width: 50%;
+    height: 120px;
+    width: 35%;
 }
 
 .price-summary-container{
@@ -68,7 +68,6 @@ h1{
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 32px;
-    padding: 16px 0;
 }
 
 .price-summary-container span{
@@ -77,8 +76,11 @@ h1{
 }
 
 .checkout-button{
-    height: 64px;
     border-radius: 12px;
-    margin: 8px;
+    margin: 24px auto;
+    width: 50%;
+    font-size: 24px;
+    background-color: #306082;
+    color: white;
 
 }
