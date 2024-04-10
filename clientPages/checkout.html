@@ -2,51 +2,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="/styles/navigation-bar.css">
+  <link rel="stylesheet" href="/styles/checkout.css">
+  <title>Realizacja zamówienia</title>
 </head>
 <body>
-  <div class="order-details-container">
-    <h2>Sposób dostawy</h2>
-    <div class="delivery-options-container">
-      <input type="radio" name="delivery-option" value="Kurier">Kurier
-      <input type="radio" name="delivery-option" value="Odbiór w punkcie">Odbiór w punkcie
-    </div>
-
-    <h2>Adres dostawy</h2>
-    <div class="delivery-address-container">
-      <form class="deliver-address-form">
-        <label for="street">ulica</label><br>
-        <input type="text" name="street"><br>
-
-        <label for="city">miasto</label><br>
-        <input type="text" name="city"><br>
-
-        <label for="postCode">kod pocztowy</label><br>
-        <input type="text" name="postCode"><br>
-      </form>
-      
-    </div>
-
-    <h2>Płatność</h2>
-    <div class="payment-options-container">
-      <input type="radio" name="payment-option" value="Płatność online">Płatność online
-      <input type="radio" name="payment-option" value="Karta płatnicza">Karta płatnicza
-      <input type="radio" name="payment-option" value="Płatność przy odbiorze">Płatność przy odbiorze
-    </div>
-  </div>
-  <div class="summary-container">
-    <div class="product-list">
-      <template>
-        <div class="product-container">
-          <p>${product.name}</p>
-          <p>${product.price}</p>
+  <header>
+    <div class="navbar">
+      <div class="nav-top-section">
+        <a href="/home-page.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
+        <input type="text" placeholder="Szukaj...">
+        <div class="user-nav-actions">
+            <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
+            <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
+            <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
         </div>
-      </template>
     </div>
+      <div class="nav-bottom-section">
+        
+            <a href="/categoryPages/laptops-category.html?category=laptops">laptopy</a>
+            <a href="/categoryPages/consoles-category.html?category=consoles">konsole</a>
+            <a href="/categoryPages/hardware-category.html?category=hardware">podzespoły komputerowe</a>
+            <a href="/categoryPages/peripherals-category.html?category=peripherals">urządzenia peryferyjne</a>
+            <a href="/categoryPages/accessories-category.html?category=accessories">akcesoria</a>
+            <a href="/categoryPages/gadgets-category.html?category=collectibles">gadżety</a>
+        
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="order-details-container">
+      
+      <div class="delivery-options-container">
+        <h2>Sposób dostawy</h2>
+        <input type="radio" name="delivery-option" value="Kurier">Kurier
+        <input type="radio" name="delivery-option" value="Odbiór w punkcie">Odbiór w punkcie
+      </div>
 
-    <p class="cart-cost-summary">Wartość koszyka 221321zł</p>
-    <button class="place-order-button">Złóż zamówienie</button>
-  </div>
+      <div class="delivery-address-container">
+        <h2>Adres dostawy</h2>
+        <form class="deliver-address-form">
+          <label for="street">ulica</label><br>
+          <input type="text" name="street"><br>
+
+          <label for="city">miasto</label><br>
+          <input type="text" name="city"><br>
+
+          <label for="postCode">kod pocztowy</label><br>
+          <input type="text" name="postCode"><br>
+        </form>
+        
+      </div>
+
+      
+      <div class="payment-options-container">
+        <h2>Płatność</h2>
+        <input type="radio" name="payment-option" value="Płatność online">Płatność online
+        <input type="radio" name="payment-option" value="Karta płatnicza">Karta płatnicza
+        <input type="radio" name="payment-option" value="Płatność przy odbiorze">Płatność przy odbiorze
+      </div>
+    </div>
+    <div class="summary-container">
+      <div class="product-list">
+        <template>
+          <div class="product-container">
+            <p>${product.name}</p>
+            <p>${product.price}</p>
+          </div>
+        </template>
+      </div>
+
+      <p class="cart-cost-summary">Wartość koszyka 221321zł</p>
+      <button class="place-order-button">Złóż zamówienie</button>
+    </div>
+  </main>
+  
   <script type="module" src="/src/user/checkout.js"></script>
 </body>
 </html>

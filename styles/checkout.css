@@ -1,0 +1,28 @@
+body {
+    background-image: url(../images/tlo.png);
+    background-repeat: repeat-x repeat-y;
+    font-family:sans-serif;
+  }
+
+main{
+    color: black;
+    background-color: white;
+    margin: 248px auto 16px auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.order-details-container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 64px;
+    border-right: 1px solid #638094;
+    padding-right: 8px;
+}
+
+.summary-container{
+    padding-left: 8px;
+}
