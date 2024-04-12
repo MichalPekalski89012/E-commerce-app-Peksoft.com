@@ -59,7 +59,7 @@ function displayProductsInCart(cartData){
   cartData.forEach(product=>{
     productList.innerHTML += `<div class="product-container">
     <p>${product.name}</p>
-    <p>${product.price}</p>
+    <p class="product-price-text">${product.price}</p>
   </div>`;
   });
 }
@@ -68,7 +68,7 @@ function displayCartCost(cartData){
   cartData.forEach(product=>{
     cartCost += parseFloat(product.price);
   });
-  cartCostSummary.innerText = `Wartość koszyka: ${cartCost}`;
+  cartCostSummary.innerHTML = `<span>Wartość koszyka</span><span>${cartCost}</span>`;
 }
 
 function placeOrder(deliveryOption,paymentOption,address,products,priceSummary,userId){
