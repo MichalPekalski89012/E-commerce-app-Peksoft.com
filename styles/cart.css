@@ -9,6 +9,7 @@ main{
     background-color: white;
     margin: 124px auto 16px auto;
     width: 90%;
+    padding: 16px 0 24px 0;
 }
 
 img{
@@ -21,6 +22,7 @@ h1{
 
 .cart-info{
     display: flex;
+    justify-content: center;
     column-gap: 224px;
     padding: 16px 16px;
 }

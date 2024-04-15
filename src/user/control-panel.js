@@ -6,6 +6,7 @@ const logoutButton = document.querySelector(".logout-button");
 const userGreetingPar = document.querySelector(".user-greeting-p");
 const wishlistedProductsList = document.querySelector(".wishlisted-products-list");
 const ordersList = document.querySelector(".orders-list");
+
 //const orderedProducts = document.querySelector(".ordered-products-container");
 
 //console.log(orderedProducts)
