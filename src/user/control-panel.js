@@ -6,8 +6,7 @@ const logoutButton = document.querySelector(".logout-button");
 const userGreetingPar = document.querySelector(".user-greeting-p");
 const wishlistedProductsList = document.querySelector(".wishlisted-products-list");
 const ordersList = document.querySelector(".orders-list");
-
-//const orderedProducts = document.querySelector(".ordered-products-container");
+const reviewsDataContainer = document.querySelector(".reviews-data-container");
 
 //console.log(orderedProducts)
 onAuthStateChanged(auth,(user)=>{
@@ -25,7 +24,7 @@ function displayWishlistedProducts(wishlist){
       readDocumentById("products", product).then((productDoc) =>{
         wishlistedProductsList.innerHTML += `<div class="wishlisted-product">
         <img src="/images/test/39042.png" alt="">
-        <p>${productDoc.name}</p>
+        <p><a href="/product-page.html?productId=${product}" class="link">${productDoc.name}</a></p>
       </div>`;
       });
   });
@@ -87,15 +86,20 @@ function displayOrders(orders){
         <p>${productData.price}zł</p>
       </div>
     </div>`;
+    reviewsDataContainer.innerHTML += `<div class="product-to-review-container">
+    <img src="/images/test/39042.png" alt="">
+    <h4>${productData.name}</h4>
+    <button class="rate-product-button">Oceń produkt</button>
+  </div>`;
     });
   });
 }
 
 
-// logoutButton.addEventListener("click",e=>{
-//   signOut(auth).then(()=>{
-//     window.location.href = "/home-page.html"
-//   }).catch((err)=>{
-//     console.log(err);
-//   });
-// });
+logoutButton.addEventListener("click",e=>{
+  signOut(auth).then(()=>{
+    window.location.href = "/index.html"
+  }).catch((err)=>{
+    console.log(err);
+  });
+});

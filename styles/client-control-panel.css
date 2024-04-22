@@ -21,11 +21,23 @@ main{
   font-size: 32px;
   width: 15%;
   padding-left: 5%;
+  padding-right: 5%;
   row-gap: 32px;
 }
 
 .user-actions-container a {
   text-decoration: none;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.logout-button, .rate-product-button, .change-data-button{
+  color: white;
+  background-color: #306082;
+  border-radius: 24px;
+  font-size: 16px;
 }
 
 .user-data-container{
@@ -85,7 +97,25 @@ img{
   column-gap: 24px;
 }
 
+/* produkty do oceny */
+.reviews-data-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px auto;
+}
 
+
+.product-to-review-container{
+  flex-basis: calc(25% - 20px); 
+  text-align: center;
+  justify-content: center;
+  color: black;
+  border: 1px solid  #306082;
+  border-radius: 5px;
+  width: 20%;
+  padding: 10px
+}
 
 /* wishlista */
 .wishlisted-product{
@@ -98,6 +128,31 @@ img{
 
 .wishlisted-product p{
   margin-top: 64px;
+}
+/* ustawienia konta */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+form *{
+  height: 50px;
+}
+
+form label{
+  margin-top: 12px;
+  margin-bottom: -24px;
+}
+
+form input{
+  font-size: 24px;
+  border-radius: 24px;
+  border-color: #306082;
+}
+
+form button{
+  margin-top: 24px;
 }
 
 /* ogolne */

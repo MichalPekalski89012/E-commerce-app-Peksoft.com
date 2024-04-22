@@ -39,6 +39,7 @@
       <a href="#orders">Zamowienia</a>
       <a href="#reviews">Opinie</a>
       <a href="#settings">Ustawienia konta</a>
+      <button class="logout-button">Wyloguj</button>
     </div>
     <div class="user-data-container">
       <h2 id="wishlist">Lista życzeń</h2>
@@ -55,61 +56,34 @@
       </div>
       <h2 id="orders">Zamówienia</h2>
       <div class="orders-data-container">
-          <div class="orders-list">
-            <!-- <div class="order">
-              <div class="status-container">
-                <div class="status">
-                  <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
-                  <p>Przyjęte do realizacji</p>
-                </div>
-                <div class="divider"></div>
-                <div class="status">
-                  <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
-                  <p>W trakcie realizacji</p>
-                </div>
-                <div class="divider"></div>
-                <div class="status">
-                  <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
-                  <p>Wysłane</p>
-                </div>
-                <div class="divider in-progress"></div>
-                <div class="status in-progress">
-                  <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
-                  <p>Zakończone</p>
-                </div>
-            </div>
-            <div class="delivery-details-container">
-              <h3>Dostawa</h3>
-              <div class="delivery-type-container">
-                <p>Kurier</p>
-              </div>
-              <h3>Adres dostawy</h3>
-              <div class="delivery-address-container"> 
-                <strong>Michał</strong>
-                <p>precesorowa 12/6</p>
-                <p>65-001 Zielona Góra</p>
-                <p>12324546789</p>
-                <p>test@gmail.com</p></div>
-            </div>
-            <h3>Zamówione produkty</h3>
-            <div class="ordered-products-container">
-              <div class="ordered-product-container">
-                <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
-                <div class="ordered-product-info">
-                  <h4>RTX 3080</h4>
-                  <p>4500zł</p>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </div>
+          <div class="orders-list"></div>
       </div>
       
       <h2 id="reviews">Produkty do recenzji</h2>
-      <div class="reviews-data-container"></div>
+      <div class="reviews-data-container">
+        <!-- <div class="product-to-review-container">
+          <img src="/images/test/39042.png" alt="">
+          <h4>${productData.name}</h4>
+          <button class="rate-product-button">Oceń produkt</button>
+        </div> -->
+      </div>
 
       <div class="settings-container">
         <h2 id="settings">Ustawienia konta</h2>
+        <form action="">
+          <label for="street">Ulica</label>
+          <input type="text" name="street">
+
+          <label for="city">Miasto</label>
+          <input type="text" name="city">
+
+          <label for="postCode">Kod pocztowy</label>
+          <input type="text" name="postCode">
+
+          <label for="phoneNumber">Numer telefonu</label>
+          <input type="text" name="phoneNumber">
+          <button class="change-data-button">Zmień dane</button>
+        </form>
       </div>
 
     </div>
