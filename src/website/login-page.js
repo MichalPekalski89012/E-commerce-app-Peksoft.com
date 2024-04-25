@@ -1,58 +1,65 @@
-import {signInWithEmailAndPassword, onAuthStateChanged,auth,userColRef,query,doc, onSnapshot,where,signOut} from "../index.js";
+import {signInWithEmailAndPassword, auth, doc, createUserWithEmailAndPassword, setDoc,db} from "../index.js";
 
 const loginForm = document.querySelector(".login");
-const userData = document.querySelector(".user-data");
-const userName = document.querySelector(".user-name");
-const logoutButton = document.querySelector(".logout");
+const signupForm = document.querySelector(".register");
+let userId= "";
 
 loginForm.addEventListener("submit",(e)=>{
   e.preventDefault();
   const email = loginForm.email.value;
   const password = loginForm.password.value;
-
   signInWithEmailAndPassword(auth,email,password).then((cred)=>{
-    loginForm.style.visibility = "hidden";
+    window.location.href = "/clientPages/client-control-panel.html";
   }).catch((err)=>{
     console.log(err);
   });
 });
 
-function readUserData(userId){
-  let q = query(userColRef,where('__name__','==',userId));
-  onSnapshot(q,(snapshot)=>{
-    snapshot.docs.forEach(doc => {
-      userName.innerText = `Witaj ${doc.data().name} ${doc.data().surname}!`;
-      userData.innerHTML = `<header>dane Użytkownika</header>
-      <p>--------------------------</p>
-        <header>adres dostawy:</header>
-        <p>${doc.data().address.street}</p>
-        <p>${doc.data().address.postCode} ${doc.data().address.city}</p>
-        <header>numer telefonu:</header>
-        <p>${doc.data().phoneNumber}</p>
-      <p>--------------------------</p>`;
+
+signupForm.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const name = signupForm.name.value;
+  const surname = signupForm.surname.value;
+  const email = signupForm.email.value;
+  const password = signupForm.password.value;
+  
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(cred => {
+      console.log("user registered");
+      userId = cred.user.uid;
+      console.log(`id usera: ${userId}`)
+      setUserData(userId,name,surname);
+      signupForm.reset();
+      // window.location.href = "/clientPages/client-control-panel.html";
+    })
+    .catch(err => {
+      console.log(`problem z rejestracją: ${err.message}`);
     });
+  
+  
+});
+
+function setUserData(userId,name,surname){
+  console.log("test");
+  const userRef = doc(db,"users",userId);
+  setDoc(userRef,{
+    name: name,
+    surname: surname,
+    phoneNumber: " ",
+    address: {
+      city: " ",
+      street: " ",
+      postCode: " "
+    },
+    wishlist: [],
+    cart: [],
+    orders: []
+  }).then(() => {
+    console.log("Stworzono dokument!");
+    window.location.href = "/index.html";
+  })
+  .catch((error) => {
+    console.error("problem z tworzeniem dokumentu: ", error);
   });
-  
-  
 }
 
-
-onAuthStateChanged(auth,(user)=>{
-  if (user){
-    logoutButton.style.visibility = "visible";
-    loginForm.style.visibility = "hidden";
-    const userId = user.uid;
-    readUserData(userId);
-    window.location.href = "/clientPages/client-control-panel.html";
-  } else {
-    userName.innerText = "użytkownik wylogowany";
-    loginForm.style.visibility = "visible";
-    logoutButton.style.visibility = "hidden";
-  }
-});
-
-logoutButton.addEventListener("click",()=>{
-  signOut(auth).then(()=>{
-    location.reload();
-  });
-});

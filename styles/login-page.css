@@ -1,0 +1,61 @@
+body {
+    background-image: url(../images/tlo.png);
+    background-repeat: repeat-x repeat-y;
+    font-family:sans-serif;
+}
+
+main{
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    margin: 10% auto 0 auto;
+    
+}
+
+
+.forms-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 64px;
+}
+
+.logo{
+    padding: 24px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    font-size: 24px;
+    margin-top: 16px;
+}
+
+form input{
+    height: 40px;
+    border-radius: 12px;
+    width: 75%;
+    font-size: 24px;
+}
+
+form button{
+    margin-top: 16px;
+    border-radius: 16px;
+    background-color: #306082;
+    color: white;
+    height: 32px;
+    width: 75%;
+    font-size: 24px;
+}
+
+.divider{
+    border-left: 1px solid #306082;
+}
+
+
+.register *{
+ width: 100%;
+}

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url(../images/tlo.png);
   background-repeat: repeat-x repeat-y;
@@ -130,28 +134,37 @@ img{
   margin-top: 64px;
 }
 /* ustawienia konta */
-form {
+.settings-container{
   display: flex;
-  flex-direction: column;
-  width: 70%;
+  column-gap: 25%;
 }
 
-form *{
+.delivery-data-container{
+  font-size: 24px;
+}
+
+.update-data-form {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.update-data-form *{
   height: 50px;
 }
 
-form label{
+.update-data-form label{
   margin-top: 12px;
   margin-bottom: -24px;
 }
 
-form input{
+.update-data-form input{
   font-size: 24px;
   border-radius: 24px;
   border-color: #306082;
 }
 
-form button{
+.update-data-form button{
   margin-top: 24px;
 }
 

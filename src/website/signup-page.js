@@ -40,10 +40,10 @@ function setUserData(userId,name,surname){
     cart: [" "],
     orders: [" "]
   }).then(() => {
-    console.log("Document successfully written!");
+    console.log("Stworzono dokument!");
   })
   .catch((error) => {
-    console.error("Error writing document: ", error);
+    console.error("problem z tworzeniem dokumentu: ", error);
   });
 }
 

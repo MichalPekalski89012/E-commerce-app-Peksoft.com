@@ -7,14 +7,16 @@ const userGreetingPar = document.querySelector(".user-greeting-p");
 const wishlistedProductsList = document.querySelector(".wishlisted-products-list");
 const ordersList = document.querySelector(".orders-list");
 const reviewsDataContainer = document.querySelector(".reviews-data-container");
+const updateDataForm = document.querySelector(".update-data-form");
+const deliveryDataContainer = document.querySelector(".delivery-data-container");
 
-//console.log(orderedProducts)
 onAuthStateChanged(auth,(user)=>{
   if(user){
     userId = user.uid;
     readDocumentById("users",userId).then((doc) => {
       displayWishlistedProducts(doc.wishlist);
       displayOrders(doc.orders);
+      displayDeliveryAddress(userId);
     });
   }
 });
@@ -28,6 +30,17 @@ function displayWishlistedProducts(wishlist){
       </div>`;
       });
   });
+}
+
+function displayDeliveryAddress(user){
+  readDocumentById("users",user).then((userData)=>{
+    deliveryDataContainer.innerHTML = `
+    <h4>Dane do przesyłki</h4>
+    <p>${userData.address.street}</p>
+    <p>${userData.address.postCode}, ${userData.address.city}</p>
+    <p>${userData.phoneNumber}</p>
+    `;
+  })
 }
 
 function displayOrders(orders){
@@ -102,4 +115,19 @@ logoutButton.addEventListener("click",e=>{
   }).catch((err)=>{
     console.log(err);
   });
+});
+
+updateDataForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const docRef = doc(db,"users",userId);
+  updateDoc(docRef,{
+    address:{
+      city: updateDataForm.city.value,
+      street: updateDataForm.street.value,
+      postCode: updateDataForm.postCode.value
+    },
+    phoneNumber: updateDataForm.phoneNumber.value 
+  })
+
+  updateDataForm.reset();
 });
