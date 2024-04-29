@@ -93,3 +93,40 @@ main {
 .parameters-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
+/* rating */
+
+.progress-bar { 
+  background-color: #638094; 
+  width: 10%; 
+  border-radius: 15px; 
+} 
+
+.progressed { 
+  background-color: #306082; 
+  color: white; 
+  padding: 1%; 
+  text-align: right; 
+  font-size: 20px; 
+  border-radius: 15px; 
+}
+
+.prg1{
+  width: 50%;
+}
+
+.prg2{
+  width: 80%;
+}
+
+.prg3{
+  width: 20%;
+}
+
+.prg4{
+  width: 5%;
+}
+
+.prg5{
+  width: 0%;
+}

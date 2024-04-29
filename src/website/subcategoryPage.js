@@ -56,7 +56,7 @@ function productsListing(subcategory){
       </ul> 
     </div>
     <div class="buy-box">
-      <p>${doc.data().price}</p>
+      <p>${doc.data().price} zł</p>
       <button class="add-to-cart-button" data-product-id="${productId}">Dodaj do koszyka</button>
     </div>
     
