@@ -12,9 +12,13 @@ main {
   padding: 15px;
 }
 
+h2{
+  margin-left: 24px;
+}
 .basic-info-section {
   display: flex;
   margin-bottom: 5px;
+  align-items: center;
 }
 
 .thumbnails-container img {
@@ -68,21 +72,40 @@ main {
   margin: 150px 100px;
   font-size: 25px;
   text-align: center;
+}
+
+button{
+  border-radius: 16px;
+  font-size: 24px;
+  color: white;
+  background-color: #306082;
+  border-color: #306082;
+}
+
+.price{
+  font-size: 32px;
+}
+
+
+.description-section, .rating-section {
+  border-top: 2px solid #306082;
+}
+
+.description{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.parameters-table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 16px auto;
+  font-size: 24px;
   
 }
 
-.description-section {
-  border-top: 2px solid black;
-}
-
-
-.parameters-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
 .parameters-table th, .parameters-table td {
-  border: 1px solid black;
+  border: 1px solid #306082;
   padding: 8px;
 }
 
@@ -96,10 +119,12 @@ main {
 
 /* rating */
 
-.progress-bar { 
+.progress-bar {
   background-color: #638094; 
-  width: 10%; 
-  border-radius: 15px; 
+  width: 50%; 
+  border-radius: 15px;
+  height: 100%;
+  margin-top: 24px;
 } 
 
 .progressed { 
@@ -109,6 +134,7 @@ main {
   text-align: right; 
   font-size: 20px; 
   border-radius: 15px; 
+  height: 100%;
 }
 
 .prg1{
@@ -130,3 +156,40 @@ main {
 .prg5{
   width: 0%;
 }
+
+
+
+.rating-summary-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.ratings-list{
+  width: 50%;
+}
+
+.rating{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.star-image-container{
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+  margin-top: 16px;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.rate-product-container{
+  display: flex;
+  flex-direction: column;
+}
+

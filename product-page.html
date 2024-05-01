@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/navigation-bar.css">
   <link rel="stylesheet" href="./styles/product-page.css">
+  <link rel="stylesheet" href="/styles/footer.css">
   <title>Document</title>
 </head>
 <body>
@@ -52,15 +53,17 @@
         <p class="price"></p>
         <button class="add-product-to-cart">dodaj do koszyka</button>
         <button class="add-product-to-wishlist">dodaj do listy życzeń</button>
-        <p>Produkt dostępny!</p>
-        <p>Darmowa dostawa</p>
+        <hr>
+        <p>Produkt dostępny! Ilość w magazynie: <strong>Wysoka</strong></p>
+        <hr>
+        <p>Darmowa dostawa(przy zakupach powyżej 100 zł)</p>
       </div>
     </section>
     
     <section class="description-section">
-        <p>Opis</p>
+        <h2>Opis</h2>
         <p class="description"></p>
-        <header>parametry</header>
+        <h2>Parametry</h2>
         <table class="parameters-table">
           <tr>
             <th>Parametr</th>
@@ -70,9 +73,11 @@
     </section>
     
     <section class="rating-section">
+      <h2>Oceny</h2>
       <div class="rating-summary-container">
         <div class="average-rating">
-          <p>4</p>
+          <h3>Średnia ocen</h3>
+          <h4>4,0</h4>
           <div class="average-stars-container">
             <img src="/images/icons/stars.png" alt="">
             <img src="/images/icons/stars.png" alt="">
@@ -80,11 +85,14 @@
             <img src="/images/icons/stars.png" alt="">
             <img src="/images/icons/starUnfilled.png" alt="">
           </div>
+          <p>Liczba ocen: 47</p>
         </div>
         <div class="ratings-list">
           <div class="rating">
-            <img src="/images/icons/stars.png" alt="">
-            <p>5</p>
+            <div class="star-image-container">
+              <img src="/images/icons/stars.png" alt="">
+              <p>5</p>
+            </div>
             <div class="progress-bar">
               <div class="progressed prg1"></div>
             </div>
@@ -92,8 +100,10 @@
           </div>
 
           <div class="rating">
-            <img src="/images/icons/stars.png" alt="">
-            <p>4</p>
+            <div class="star-image-container">
+              <img src="/images/icons/stars.png" alt="">
+              <p>4</p>
+            </div>
             <div class="progress-bar">
               <div class="progressed prg2"></div>
             </div>
@@ -101,8 +111,10 @@
           </div>
 
           <div class="rating">
-            <img src="/images/icons/stars.png" alt="">
-            <p>3</p>
+            <div class="star-image-container">
+              <img src="/images/icons/stars.png" alt="">
+              <p>3</p>
+            </div>
             <div class="progress-bar">
               <div class="progressed prg3"></div>
             </div>
@@ -110,8 +122,10 @@
           </div>
 
           <div class="rating">
-            <img src="/images/icons/stars.png" alt="">
-            <p>2</p>
+            <div class="star-image-container">
+              <img src="/images/icons/stars.png" alt="">
+              <p>2</p>
+            </div>
             <div class="progress-bar">
               <div class="progressed prg4"></div>
             </div>
@@ -119,8 +133,10 @@
           </div>
 
           <div class="rating">
-            <img src="/images/icons/stars.png" alt="">
-            <p>1</p>
+            <div class="star-image-container">
+              <img src="/images/icons/stars.png" alt="">
+              <p>1</p>
+            </div>
             <div class="progress-bar">
               <div class="progressed prg5"></div>
             </div>
@@ -135,10 +151,44 @@
         </div>
       </div>
     </section>
-
-
   </main>
-  
+  <footer>
+    <div class="footer-container">
+      <div class="category-pages-container">
+        <h3>Kategorie</h3>
+        <ul>
+          <li><a href="/categoryPages/laptops-category.html">Laptopy</a></li>
+          <li><a href="/categoryPages/consoles-category.html">Konsole</a></li>
+          <li><a href="/categoryPages/hardware-category.html">Podzespoły komputerowe</a></li>
+          <li><a href="/categoryPages/peripherals-category.html">Urządzenia peryferyjne</a></li>
+          <li><a href="/categoryPages/accessories-category.html">Akcesoria</a></li>
+          <li><a href="/categoryPages/gadgets-category.html">Gadżety</a></li>
+        </ul>
+      </div>
+      <div class="client-pages-container">
+        <h3>Klient</h3>
+        <ul>
+          <li><a href="/clientPages/login-page.html">Panel użytkownika</a></li>
+          <li><a href="/clientPages/wishlist.html">Lista życzeń</a></li>
+          <li><a href="/clientPages/cart.html">Koszyk</a></li>
+        </ul>
+      </div>
+      <div class="contact-container">
+        <h3>Kontakt</h3>
+        <address>
+          <p>123456789</p>
+          <p>pon.-pt.  8:00-16:00</p>
+          <a href="mailto:peksoft@peksoft.pl">peksoft@peksoft.pl</a>
+        </address>
+        <div class="social-media-icon-container">
+          <a href="https://www.facebook.com/">facebook</a>
+          <a href="https://www.instagram.com/">instagram</a>
+          <a href="https://www.youtube.com/">youtube</a>
+        </div>
+      </div>
+    </div>
+    <p class="author">Peksoft 2024 stworzone przez: Michał Pękalski</p>
+  </footer>
   
   
   
