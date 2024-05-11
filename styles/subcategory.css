@@ -137,8 +137,12 @@ input[type="checkbox"]{
 }
 
 .buy-box button{
- margin-left: 5%;
- margin-top: 10%;
+  margin-left: 5%;
+  margin-top: 10%;
+  border-radius: 16px;
+  color: white;
+  background-color: #306082;
+  border-color: #306082;
  
 }
 

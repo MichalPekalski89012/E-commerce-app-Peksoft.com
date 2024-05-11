@@ -44,10 +44,22 @@ function displayDeliveryAddress(user){
 }
 
 function displayOrders(orders){
-  let productsArray; 
+   
   orders.forEach(order =>{
-    productsArray = order.products;
-    console.log(order.products);
+    let orderedProductsHtml;
+    let productsArray = order.products;
+    productsArray.forEach(product =>{
+      readDocumentById('products',product).then(productData =>{
+        orderedProductsHtml += `<div class="ordered-product-container">
+        <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
+        <div class="ordered-product-info">
+          <h4>${productData.name}</h4>
+          <p>${productData.price}zł</p>
+        </div>
+        </div>`;
+      });
+    });
+    console.log(orderedProductsHtml);
     ordersList.innerHTML +=`<div class="order">
     <div class="status-container">
       <div class="status">
@@ -86,28 +98,115 @@ function displayOrders(orders){
     </div>
   </div>
   <h3>Zamówione produkty</h3>
-  <div class="ordered-products-container"></div>
+  <div class="ordered-products-container">${orderedProductsHtml}</div>
 </div>`;
-  });
-  const tester = document.querySelector(".ordered-products-container");
-  productsArray.forEach(product=>{
-    readDocumentById("products",product).then(productData=>{
-      tester.innerHTML += `<div class="ordered-product-container">
-      <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
-      <div class="ordered-product-info">
-        <h4>${productData.name}</h4>
-        <p>${productData.price}zł</p>
-      </div>
-    </div>`;
-    reviewsDataContainer.innerHTML += `<div class="product-to-review-container">
-    <img src="/images/test/39042.png" alt="">
-    <h4>${productData.name}</h4>
-    <button class="rate-product-button">Oceń produkt</button>
-  </div>`;
-    });
+
+
+  // productsArray.forEach(product=>{
+  //   readDocumentById("products",product).then(productData=>{
+  //   //   tester.innerHTML += `<div class="ordered-product-container">
+  //   //   <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
+  //   //   <div class="ordered-product-info">
+  //   //     <h4>${productData.name}</h4>
+  //   //     <p>${productData.price}zł</p>
+  //   //   </div>
+  //   // </div>`;
+  //   });
+  // });
+  // // const tester = document.querySelector(".ordered-products-container");
+  // // productsArray.forEach(product=>{
+  // //   readDocumentById("products",product).then(productData=>{
+  // //     tester.innerHTML += `<div class="ordered-product-container">
+  // //     <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
+  // //     <div class="ordered-product-info">
+  // //       <h4>${productData.name}</h4>
+  // //       <p>${productData.price}zł</p>
+  // //     </div>
+  // //   </div>`;
+  // //   reviewsDataContainer.innerHTML += `<div class="product-to-review-container">
+  // //   <img src="/images/test/39042.png" alt="">
+  // //   <h4>${productData.name}</h4>
+  // //   <button class="rate-product-button">Oceń produkt</button>
+  // // </div>`;
+  //   // });
   });
 }
 
+
+// function displayOrders(orders){
+//   orders.forEach(order =>{
+//     let productsArray = order.products; // Move inside the loop
+//     let orderElement = document.createElement('div');
+//     orderElement.classList.add('order');
+    
+//     ordersList.innerHTML +=`<div class="order">
+//     <div class="status-container">
+//       <div class="status">
+//         <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
+//         <p>Przyjęte do realizacji</p>
+//       </div>
+//       <div class="divider"></div>
+//       <div class="status">
+//         <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
+//         <p>W trakcie realizacji</p>
+//       </div>
+//       <div class="divider"></div>
+//       <div class="status">
+//         <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
+//         <p>Wysłane</p>
+//       </div>
+//       <div class="divider in-progress"></div>
+//       <div class="status in-progress">
+//         <img src="/images/icons/ptaszek.png" alt="status-icon" class="status-icon">
+//         <p>Zakończone</p>
+//       </div>
+//   </div>
+//   <div class="delivery-details-container">
+//     <h3>Dostawa</h3>
+//     <div class="delivery-type-container">
+//       <p>${order.deliveryType}</p>
+//     </div>
+//     <h3>Płatność</h3>
+//     <div class="payment-method-container">
+//       <p>${order.paymentMethod}</p>
+//     </div>
+//     <h3>Adres dostawy</h3>
+//     <div class="delivery-address-container"> 
+//       <p>${order.address.street}</p>
+//       <p>${order.address.postCode} ${order.address.city}</p>
+//     </div>
+//   </div>
+//   <h3>Zamówione produkty</h3>
+//   <div class="ordered-products-container"></div>
+// </div>`;
+    
+//     let orderedProductsContainer = document.createElement('div');
+//     orderedProductsContainer.classList.add('ordered-products-container'); // Get container inside this order
+
+//     productsArray.forEach(product=>{
+//       readDocumentById("products",product).then(productData=>{
+//         orderedProductsContainer.innerHTML += `<div class="ordered-product-container">
+//         <img src="/images/test/39042.png" alt="product-photo" class="ordered-product-image">
+//         <div class="ordered-product-info">
+//         <h4>${productData.name}</h4>
+//         <p>${productData.price}zł</p>
+//         </div>
+//       </div>`;
+//     //   reviewsDataContainer.innerHTML += `<div class="product-to-review-container">
+//     //   <img src="/images/test/39042.png" alt="">
+//     //   <h4>${productData.name}</h4>
+//     //   <button class="rate-product-button">Oceń produkt</button>
+//     // </div>`;
+//       });
+//     });
+    
+    
+//     orderElement.appendChild(orderedProductsContainer); // Append orderedProductsContainer to orderElement
+    
+//     // Append the order element to the ordersList (assuming you have ordersList declared somewhere)
+//     ordersList.appendChild(orderElement);
+//   });
+// }
 
 logoutButton.addEventListener("click",e=>{
   signOut(auth).then(()=>{

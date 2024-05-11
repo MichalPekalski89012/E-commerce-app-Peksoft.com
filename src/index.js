@@ -25,7 +25,16 @@ const db = getFirestore();
 const auth = getAuth();
 const productsColRef = collection(db,'products');
 const userColRef = collection(db,'users');
+const searchInput = document.querySelector('.searchInput')
 
+if(searchInput != null){
+  searchInput.addEventListener('keyup',(e)=>{
+    if (e.keyCode === 13) {
+      window.location.href = `/search-result.html?searchQuery=${searchInput.value}`;
+      searchInput.value = '';
+    }
+  });
+}
 
 
 export async function readDocumentById(coll,id){
@@ -67,5 +76,9 @@ export async function readUserCartData(userId) {
 
 
 
-export {app, db, productsColRef,userColRef, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, updateDoc, getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, auth,setDoc,arrayRemove,limit};
+export {app, db, productsColRef,userColRef, onSnapshot, addDoc, 
+  deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, 
+  updateDoc, getAuth, createUserWithEmailAndPassword, signOut, 
+  signInWithEmailAndPassword, onAuthStateChanged, auth,setDoc,
+  arrayRemove,limit,getDocs};
 

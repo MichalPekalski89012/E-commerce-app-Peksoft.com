@@ -1,8 +1,17 @@
-import {signInWithEmailAndPassword, auth, doc, createUserWithEmailAndPassword, setDoc,db} from "../index.js";
+import {signInWithEmailAndPassword, auth, doc, createUserWithEmailAndPassword, setDoc,db,onAuthStateChanged} from "../index.js";
 
 const loginForm = document.querySelector(".login");
 const signupForm = document.querySelector(".register");
 let userId= "";
+
+
+onAuthStateChanged(auth,(user)=>{
+  if(user){
+    window.location.href = "/clientPages/client-control-panel.html";
+  }
+});
+
+
 
 loginForm.addEventListener("submit",(e)=>{
   e.preventDefault();

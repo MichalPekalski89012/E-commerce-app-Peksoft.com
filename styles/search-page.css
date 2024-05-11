@@ -1,0 +1,74 @@
+body {
+    background-image: url(../images/tlo.png);
+    background-repeat: repeat-x repeat-y;
+  }
+  
+  
+main {
+    width: 90%;
+    margin: 124px auto;
+    font-size: 24px;
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    display: flex;
+    
+}
+
+h1{
+    font-size: 64px;
+}
+
+
+
+.product-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 64px auto;
+}
+
+.product-details{
+    margin-left: 5%;
+    max-width: 512px;
+}
+  
+.product-details ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 20px; 
+}
+  
+.product-container img {
+    width: 15%;
+    height: auto;
+}
+  
+.product-rating img {
+    width: 5%;
+}
+  
+.buy-box{
+    text-align: center;
+    margin-left: 10%;
+}
+  
+.buy-box button{
+   margin-left: 5%;
+   margin-top: 10%;
+}
+
+.section-divider-hr{
+    height: 2px;
+    width: 140%;
+    background-color: #05092e;
+    border-color: #05092e;
+}
+
+button{
+    border-radius: 16px;
+    color: white;
+    background-color: #306082;
+    border-color: #306082;
+  }

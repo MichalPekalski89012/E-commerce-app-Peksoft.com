@@ -3,15 +3,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/navigation-bar.css">
-  <link rel="stylesheet" href="/styles/checkout.css">
+  <link rel="stylesheet" href="/styles/search-page.css">
   <link rel="stylesheet" href="/styles/footer.css">
-  <title>Realizacja zamówienia</title>
+  <title>Wyszukiwania</title>
 </head>
 <body>
   <header>
     <div class="navbar">
       <div class="nav-top-section">
-        <a href="/index.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
+        <a href="/home-page.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
         <input type="text" placeholder="Szukaj..." class="searchInput">
         <div class="user-nav-actions">
             <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
@@ -31,57 +31,13 @@
       </div>
     </div>
   </header>
+
   <main>
-    <div class="order-details-container">
-      
-      <div class="delivery-options-container">
-        <h2>Sposób dostawy</h2>
-        <input type="radio" name="delivery-option" value="Kurier">Kurier
-        <input type="radio" name="delivery-option" value="Odbiór w punkcie">Odbiór w punkcie
-      </div>
-
-      <div class="delivery-address-container">
-        <h2>Adres dostawy</h2>
-        <form class="deliver-address-form">
-          <label for="street">ulica</label><br>
-          <input type="text" name="street"><br>
-
-          <label for="city">miasto</label><br>
-          <input type="text" name="city"><br>
-
-          <label for="postCode">kod pocztowy</label><br>
-          <input type="text" name="postCode"><br>
-        </form>
-        
-      </div>
-
-      
-      <div class="payment-options-container">
-        <h2>Płatność</h2>
-        <ul>
-          <li><input type="radio" name="payment-option" value="Płatność online">Płatność online</li>
-          <li><input type="radio" name="payment-option" value="Karta płatnicza">Karta płatnicza</li>
-          <li><input type="radio" name="payment-option" value="Płatność przy odbiorze">Płatność przy odbiorze</li>
-        </ul>
-        
-        
-        
-      </div>
-    </div>
-    <div class="summary-container">
-      <h2>Zamówione produkty</h2>
-      <div class="product-list">
-        <template>
-          <div class="product-container">
-            <p>${product.name}</p>
-            <p>${product.price}</p>
-          </div>
-        </template>
-      </div>
-
-      <p class="cart-cost-summary">Wartość koszyka 221321zł</p>
-      <button class="place-order-button">Złóż zamówienie</button>
-    </div>
+    <section>
+      <h1>Wyniki wyszukiwania</h1>
+      <hr class="section-divider-hr">
+      <div class="products-list"></div>
+    </section>
   </main>
   
   <footer>
@@ -122,6 +78,8 @@
     <p class="author">Peksoft 2024 stworzone przez: Michał Pękalski</p>
   </footer>
 
-  <script type="module" src="/src/user/checkout.js"></script>
+
+
+  <script type = "module" src="/src/website/searchQuery.js"></script>
 </body>
 </html>

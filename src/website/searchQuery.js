@@ -1,1 +1,81 @@
-// podstrona do wyświetlania produktów, które użytkownik szuka https://www.youtube.com/watch?v=TlP5WIxVirU&t=75s&ab_channel=WebDevSimplified
+import { doc, onSnapshot, productsColRef, query, where, onAuthStateChanged, auth, readDocumentById,updateDoc, userColRef, limit,getDocs,db, arrayRemove} from "../index.js";
+
+let url_string = window.location.href;
+let url = new URL(url_string);
+let searched = url.searchParams.get("searchQuery");
+const productList = document.querySelector('.products-list');
+let productsNamesArray = [];
+
+function FindProductsName(){
+    let q = query(productsColRef,where('name', '>=', ''));
+    onSnapshot(q,(snapshot)=>{
+      snapshot.docs.forEach(doc => {
+        //console.log(doc.data().name)
+        productsNamesArray.push(String(doc.data().name));
+      });
+      productsListing(productsNamesArray,searched);
+    });
+    
+}
+
+FindProductsName()
+
+
+
+function productsListing(array,searched){
+    let arrayOfNames = [];
+    array.forEach(productName =>{
+        let searchedProduct = String(searched)
+        let result = productName.includes(searchedProduct);
+        if(result){
+          arrayOfNames.push(productName);
+          console.log(arrayOfNames);
+          let q = query(productsColRef,where('name', '==',productName));
+          onSnapshot(q,(snapshot)=>{
+          snapshot.docs.forEach(doc => {
+          console.log(doc.data().name);
+          let productId = doc.id;
+          productList.innerHTML += `<div class="product-container">
+          <img src="/images/test/39042.png" alt="">
+          <div class="product-details">
+            <p><a href="/product-page.html?productId=${doc.id}">${doc.data().name}</a></p>
+            <div class="product-rating">
+              <img src="/images/icons/stars.png" alt="">
+              <img src="/images/icons/stars.png" alt="">
+              <img src="/images/icons/stars.png" alt="">
+              <img src="/images/icons/stars.png" alt="">
+              <img src="/images/icons/starUnfilled.png" alt="">
+              
+            </div>
+            <ul>
+              ${displayProductParameters(doc.data().parameters)}
+            </ul> 
+          </div>
+          <div class="buy-box">
+            <p>${doc.data().price} zł</p>
+            <button class="add-to-cart-button" data-product-id="${productId}">Dodaj do koszyka</button>
+          </div>
+          
+        </div>`
+      });
+    });
+  } else{
+    productList.innerHTML = `<h2>Brak wyników dla: ${searched}</h2>`;
+  }
+});
+}
+
+function displayProductParameters(params){
+    if(!params){return;}
+    let productParams = '';
+    let count = 0;
+    for (let key of Object.keys(params)) {
+      if (count >= 5) {
+        break; 
+      }
+      productParams+= `<li>${key} ${params[key]}</li>`;
+      count++;
+      
+   }
+   return productParams;
+  }
