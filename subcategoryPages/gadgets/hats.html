@@ -7,17 +7,30 @@
   <title>Czapki</title>
 </head>
 <body>
-  <nav>
-    <a href="/categoryPages/laptops-category.html">laptopy</a>
-    <a href="/categoryPages/consoles-category.html">konsole</a>
-    <a href="/categoryPages/hardware-category.html">podzespoły komputerowe</a>
-    <a href="/categoryPages/peripherals-category.html">urządzenia peryferyjne</a>
-    <a href="/categoryPages/accessories-category.html">akcesoria</a>
-    <a href="/categoryPages/gadgets-category.html">gadżety</a>
-    <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
-    <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
-    <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
-  </nav>
+  <header>
+    <div class="navbar">
+      <div class="nav-top-section">
+        <a href="/home-page.html"><img src="/images/icons/logoplaceholder.png" alt="Logo" class="logo"></a>
+        <input type="text" placeholder="Szukaj..." class="searchInput">
+        <div class="user-nav-actions">
+            <a href="/clientPages/login-page.html"><img src="/images/icons/userIcon.png" alt="userIcon"></a>
+            <a href="/clientPages/wishlist.html"><img src="/images/icons/wishlistIcon.png" alt="wishlist"></a>
+            <a href="/clientPages/cart.html"><img src="/images/icons/cartIcon.png" alt="cart"></a>
+        </div>
+    </div>
+      <div class="nav-bottom-section">
+        
+            <a href="/categoryPages/laptops-category.html?category=laptops">laptopy</a>
+            <a href="/categoryPages/consoles-category.html?category=consoles">konsole</a>
+            <a href="/categoryPages/hardware-category.html?category=hardware">podzespoły komputerowe</a>
+            <a href="/categoryPages/peripherals-category.html?category=peripherals">urządzenia peryferyjne</a>
+            <a href="/categoryPages/accessories-category.html?category=accessories">akcesoria</a>
+            <a href="/categoryPages/gadgets-category.html?category=collectibles">gadżety</a>
+        
+      </div>
+    </div>
+  </header>
+  
   <main>
     <div class="products-list"></div>
   </main>
