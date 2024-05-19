@@ -8,7 +8,7 @@ import { collection, getFirestore, onSnapshot,
 import { getAuth,createUserWithEmailAndPassword,
   signOut,signInWithEmailAndPassword,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js';
 
-
+import {getStorage,ref,getDownloadURL,listAll} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js';
   
 const firebaseConfig = {
   apiKey: "AIzaSyAJ9KxuSqSgMPSoQXmqfwHx5AHbCAypzzU",
@@ -25,7 +25,8 @@ const db = getFirestore();
 const auth = getAuth();
 const productsColRef = collection(db,'products');
 const userColRef = collection(db,'users');
-const searchInput = document.querySelector('.searchInput')
+const searchInput = document.querySelector('.searchInput');
+const storage = getStorage();
 
 if(searchInput != null){
   searchInput.addEventListener('keyup',(e)=>{
@@ -80,5 +81,5 @@ export {app, db, productsColRef,userColRef, onSnapshot, addDoc,
   deleteDoc, doc, query, where, orderBy, serverTimestamp, getDoc, 
   updateDoc, getAuth, createUserWithEmailAndPassword, signOut, 
   signInWithEmailAndPassword, onAuthStateChanged, auth,setDoc,
-  arrayRemove,limit,getDocs};
+  arrayRemove,limit,getDocs,storage,ref,getDownloadURL,listAll};
 

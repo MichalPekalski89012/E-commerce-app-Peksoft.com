@@ -1,14 +1,15 @@
 // cały kod który będzie dodawał produkty do Firebase
-import { productsColRef,addDoc} from "../index.js";
+import { productsColRef,addDoc,storage,ref} from "../index.js";
 
 const categoryList = document.querySelector('.js-category-list');
 const subcategoryList = document.querySelector('.js-subcategory-list');
 const parametersTable = document.querySelector('.js-parameters-table');
+const imageInput = document.querySelector(".image-input");
 let categoryValue = '';
 let parametersTableHtml = '';
+
 categoryList.addEventListener('change',()=>{
   categoryValue = categoryList.value;
-  
   changeSubcategory(categoryValue);
 
 });
@@ -943,12 +944,14 @@ addProductForm.addEventListener('submit',(e)=>{
     category: addProductForm.category.value,
     subcategory: addProductForm.subcategory.value,
     description: addProductForm.description.value,
-    parameters: parametersObject()
+    parameters: parametersObject(),
+    imageReferenceFolder: addProductForm.images.value
   }).then(()=>{
     addProductForm.reset();
   });
   
 });
+
 
 function parametersObject(){
   const parametersObj={};

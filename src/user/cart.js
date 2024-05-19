@@ -1,5 +1,5 @@
 // wszelkie operacje związane z koszykiem użytkownika
-import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where,updateDoc,db,arrayRemove} from "../index.js";
+import {onAuthStateChanged, auth, productsColRef, userColRef, query, doc, onSnapshot, where,updateDoc,db,arrayRemove,storage,ref,getDownloadURL} from "../index.js";
 
 let userId = "";
 export let cartArray = [];
@@ -33,11 +33,22 @@ function displayCart(cartArray){
     let q = query(productsColRef,where('__name__','==',product));
     onSnapshot(q,(snapshot)=>{
       snapshot.docs.forEach(doc =>{
-        cartContainer.innerHTML += `<div class="product-container">
-        <img src="/images/test/39042.png" alt="">
-        <p>${doc.data().name} ${doc.data().price}</p>
-        <button class="delete-product-button" data-product-id="${product}">usuń</button>
-      </div>`;
+      //   cartContainer.innerHTML += `<div class="product-container">
+      //   <img src="/images/test/39042.png" alt="">
+      //   <p>${doc.data().name} ${doc.data().price}</p>
+      //   <button class="delete-product-button" data-product-id="${product}">usuń</button>
+      // </div>`;
+        let defaultImageRef = ref(storage,`${doc.data().imageReferenceFolder}/default.png`);
+        getDownloadURL(defaultImageRef).then((url) => {
+          cartContainer.innerHTML += `<div class="product-container">
+          <img src="${url}" alt="">
+          <p>${doc.data().name} ${doc.data().price}</p>
+          <button class="delete-product-button" data-product-id="${product}">usuń</button>
+        </div>`;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
       priceSummaryValue += parseFloat(doc.data().price);
       });
       priceSummaryText.innerHTML = `${priceSummaryValue} zł`;

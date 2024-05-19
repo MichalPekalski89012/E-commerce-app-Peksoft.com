@@ -1,4 +1,4 @@
-import {onAuthStateChanged, auth, userColRef, query, doc, onSnapshot, where,updateDoc,db,signOut,readDocumentById,getDoc} from "../index.js";
+import {onAuthStateChanged, auth, userColRef, query, doc, onSnapshot, where,updateDoc,db,signOut,readDocumentById,getDoc, storage, ref, getDownloadURL} from "../index.js";
 
 let userId = "";
 const changeDataButton = document.querySelector(".change-data-button");
@@ -24,10 +24,20 @@ onAuthStateChanged(auth,(user)=>{
 function displayWishlistedProducts(wishlist){
   wishlist.forEach(product => {
       readDocumentById("products", product).then((productDoc) =>{
+      //   wishlistedProductsList.innerHTML += `<div class="wishlisted-product">
+      //   <img src="/images/test/39042.png" alt="">
+      //   <p><a href="/product-page.html?productId=${product}" class="link">${productDoc.name}</a></p>
+      // </div>`;
+      let defaultImageRef = ref(storage,`${productDoc.ImageReferenceFolder}/default.png`);
+      getDownloadURL(defaultImageRef).then((url) => {
         wishlistedProductsList.innerHTML += `<div class="wishlisted-product">
-        <img src="/images/test/39042.png" alt="">
+        <img src="${url}" alt="">
         <p><a href="/product-page.html?productId=${product}" class="link">${productDoc.name}</a></p>
       </div>`;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
       });
   });
 }

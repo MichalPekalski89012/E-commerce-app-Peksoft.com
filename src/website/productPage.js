@@ -1,4 +1,4 @@
-import { doc, onSnapshot, productsColRef, query, where,readDocumentById,onAuthStateChanged,auth,updateDoc,userColRef } from "../index.js";
+import { doc, onSnapshot, productsColRef, query, where,readDocumentById,onAuthStateChanged,auth,updateDoc,userColRef,storage,ref,getDownloadURL,listAll } from "../index.js";
 
 let url_string = window.location.href;
 let url = new URL(url_string);
@@ -14,6 +14,7 @@ const description = document.querySelector(".description");
 const parametersTable = document.querySelector(".parameters-table");
 const addToCartButton = document.querySelector(".add-product-to-cart");
 const addToWishlistButton = document.querySelector(".add-product-to-wishlist");
+const test = document.querySelector('.current-photo-container');
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -26,9 +27,69 @@ onAuthStateChanged(auth,(user)=>{
   }
 });
 
+function getImagesReferences(reference){
+  let test = 0;
+  let storageRef = ref(storage,reference);
+  let defaultImageRef = ref(storage,`${reference}/default.png`);
+  getDownloadURL(defaultImageRef)
+    .then((url) => {
+      console.log("test")
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = (event) => {
+        const blob = xhr.response;
+      };
+      xhr.open('GET', url);
+      xhr.send();
+      const img = document.getElementById(`current-photo`);
+      img.setAttribute('src', url);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+
+
+  listAll(storageRef).then((result)=> {
+    result.items.forEach((imageRef)=> {
+    console.log(imageRef);
+    test++;
+    displayProductImage(imageRef,test);
+  });
+    }).catch(function(error) {
+      console.log("error przy pobieraniu referencji:",error);
+    });
+}
+
+
+
+function displayProductImage(reference,test){
+    getDownloadURL(reference)
+    .then((url) => {
+      console.log("test")
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = (event) => {
+        const blob = xhr.response;
+      };
+      xhr.open('GET', url);
+      xhr.send();
+      const img = document.getElementById(`image-${test}`);
+      img.setAttribute('src', url);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
+
+
+
 readDocumentById("products",productId).then(data=>{
   displayProductData(data);
   displayProductParameters(data.parameters);
+  getImagesReferences(data.imageReferenceFolder);
 });
 
 function displayProductData(productData){

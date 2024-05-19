@@ -17,7 +17,13 @@ main {
 }
 
 h1{
-  margin-left: 24px;
+  margin-left: 256px;
+  font-size: 64px;
+}
+
+h2{
+  margin-left: 512px;
+  font-size: 48px;
 }
 
 .category-container {
@@ -70,7 +76,8 @@ h1{
   max-width: 800px;
 }
 
-.discounted-product-container { 
+.discounted-product-container {
+  width: 25%;
   text-align: left;
   justify-content: center;
   color: black;
@@ -138,4 +145,9 @@ h1{
 .discounted-product-container a {
   text-decoration: none;
   color: black;
+}
+
+.category-card img{
+  width: 100%;
+  image-rendering: pixelated;
 }
