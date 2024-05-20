@@ -5,15 +5,14 @@ body {
 }
 
 main {
-  width: 98%;
-  margin: 200px auto;
+  width: 90%;
+  margin: 124px auto 0 auto;
   font-size: 16px;
   background-color: white;
   color: black;
   font-family: sans-serif;
-  padding-bottom: 50px;
+  padding-bottom: 512px;
   padding-top: 16px;
-  border-radius: 5px;
 }
 
 h1{

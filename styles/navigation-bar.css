@@ -32,9 +32,14 @@
   margin-right: 24px;
 }
 
-.user-nav-actions img{
-  width: 36px;
+.user-nav-actions img, .logo{
+  image-rendering: pixelated;
 }
+
+.user-nav-actions img{
+  width: 64px;
+}
+ 
 
 .user-nav-actions img:hover{
   border-radius: 8px;
