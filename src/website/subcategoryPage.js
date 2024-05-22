@@ -3,8 +3,6 @@ import { doc, onSnapshot, productsColRef, query, where, onAuthStateChanged, auth
 
 const productList = document.querySelector('.products-list');
 const popularProductsSection = document.querySelector(".popular-products-list");
-const priceSlider = document.querySelector(".price-slider");
-const maxPriceText = document.querySelector(".max-price-text");
 let url_string = window.location.href;
 let url = new URL(url_string);
 let subcategory = url.searchParams.get("subcategory");
@@ -13,7 +11,7 @@ let wishlistArray;
 let userId;
 let productIdArray = [];
 
-maxPriceText.innerText = `${priceSlider.value} zł`;
+
 
 onAuthStateChanged(auth,(user)=>{
   if(user){
@@ -25,10 +23,6 @@ onAuthStateChanged(auth,(user)=>{
     
   }
 });
-
-priceSlider.oninput = function() {
-  maxPriceText.innerText = `${this.value} zł`;
-}
 
 
 displayPopularProducts(subcategory);
@@ -67,7 +61,7 @@ function productsListing(subcategory){
       productList.innerHTML += `<div class="product-container">
     <img src="${url}" alt="" id="default-image">
     <div class="product-details">
-      <p><a href="/product-page.html?productId=${doc.id}">${doc.data().name}</a></p>
+      <p><a href="/product-page.html?productId=${doc.id}" class="product-link">${doc.data().name}</a></p>
       <div class="product-rating">
         <img src="/images/icons/stars.png" alt="">
         <img src="/images/icons/stars.png" alt="">

@@ -28,7 +28,7 @@ onAuthStateChanged(auth,(user)=>{
 });
 
 function getImagesReferences(reference){
-  let test = 0;
+  let count = 0;
   let storageRef = ref(storage,reference);
   let defaultImageRef = ref(storage,`${reference}/default.png`);
   getDownloadURL(defaultImageRef)
@@ -54,7 +54,7 @@ function getImagesReferences(reference){
     result.items.forEach((imageRef)=> {
     console.log(imageRef);
     test++;
-    displayProductImage(imageRef,test);
+    displayProductImage(imageRef,count);
   });
     }).catch(function(error) {
       console.log("error przy pobieraniu referencji:",error);
@@ -63,7 +63,7 @@ function getImagesReferences(reference){
 
 
 
-function displayProductImage(reference,test){
+function displayProductImage(reference,count){
     getDownloadURL(reference)
     .then((url) => {
       console.log("test")
@@ -74,7 +74,7 @@ function displayProductImage(reference,test){
       };
       xhr.open('GET', url);
       xhr.send();
-      const img = document.getElementById(`image-${test}`);
+      const img = document.getElementById(`image-${count}`);
       img.setAttribute('src', url);
     })
     .catch((error) => {

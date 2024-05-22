@@ -25,7 +25,10 @@
 
 .nav-top-section input{
   width: 30%;
+  height: 48px;
   border-radius: 24px;
+  font-size: 24px;
+  margin-top: 8px;
 }
 
 .user-nav-actions a{
@@ -38,6 +41,10 @@
 
 .user-nav-actions img{
   width: 64px;
+}
+
+.logo{
+  margin-top: 8px;
 }
  
 

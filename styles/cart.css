@@ -7,12 +7,12 @@ body {
 main{
     color: black;
     background-color: white;
-    margin: 124px auto 16px auto;
+    margin: 124px auto 0 auto;
     width: 90%;
-    padding: 16px 0 24px 0;
+    padding: 256px 0 256px 0;
 }
 
-img{
+main img{
     width: 100px;
 }
 

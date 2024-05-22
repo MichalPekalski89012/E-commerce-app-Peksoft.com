@@ -31,6 +31,7 @@ const storage = getStorage();
 if(searchInput != null){
   searchInput.addEventListener('keyup',(e)=>{
     if (e.keyCode === 13) {
+      
       window.location.href = `/search-result.html?searchQuery=${searchInput.value}`;
       searchInput.value = '';
     }

@@ -17,7 +17,7 @@ main {
 
 
 .products-section {
-  width: 85%;
+  width: 100%;
   padding-left: 16px;
 }
 
@@ -29,81 +29,11 @@ h2{
   margin-left: 25%;
 }
 
-/* filtry */
-.filters-section {
-  width: 15%;
-  border: 1px solid #696a6a;
-  border-radius: 5px;
-  height: 50%;
-  margin: 20px 10px 50px 10px;
-  padding-left: 10px;
-}
-
-.price-filter{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.price-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 90%; 
-  height: 10px;  
-  outline: none; 
-  opacity: 0.7;
-  background: #05092e; 
-  -webkit-transition: .2s; 
-  transition: opacity .2s;
-  border-radius: 5px;
-}
-
-.price-slider:hover {
-  opacity: 1; 
-}
-
-.price-slider::-webkit-slider-thumb {
-  -webkit-appearance: none; 
-  appearance: none;
-  width: 25px; 
-  height: 25px; 
-  background: #71c9c2; 
-  cursor: pointer;
-  border-radius: 50px;
-}
-
-.price-slider::-moz-range-thumb {
-  width: 25px; 
-  height: 25px; 
-  background: #71c9c2; 
-  cursor: pointer; 
-}
-
-.checkboxes{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  line-height: 16px;
-  cursor: pointer;
-  margin: 0px;
-  flex-wrap: wrap;
-}
-
-.core-frequency-filter {
-  display: flex;
-}
-
-.core-frequency-filter input{
-  width: 50%;
-  border: 1px solid #05092e;
-  border-radius: 15px;
-}
-
-input[type="checkbox"]{
-  margin-top: 25px;
-}
 
 /* lista produktów */
+.products-list{
+  margin: 0 auto;
+}
 .product-container {
   width: 80%;
   display: flex;
@@ -113,6 +43,10 @@ input[type="checkbox"]{
 .product-details{
   margin-left: 5%;
   max-width: 512px;
+}
+
+.product-link{
+  text-decoration: none;
 }
 
 .product-details ul{
@@ -195,7 +129,7 @@ input[type="checkbox"]{
 }
 
 .user-actions.populars{
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
 }
